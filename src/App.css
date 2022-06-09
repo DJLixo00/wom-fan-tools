@@ -1,30 +1,84 @@
+/* MainBox.js */
 .mainBox{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .mainDiv{
   position: relative;
-  background-color: aliceblue;
   opacity: .9;
   box-sizing: border-box;
 }
 
 #topDiv{
+  background-color: aliceblue;
   width:100%;
-  height:20vh;
-}
-
-#leftDiv{
-  width:45%;
-  height:20vh;
-}
-
-#rightDiv{
-  width:45%;
-  height:20vh;
+  height:10vh;
 }
 
 #bottomDiv{
+  background-color: deepskyblue;
   width:100%;
   height:10vh;
+}
+
+/* right side */
+#rightDiv{
+  background-color: cadetblue;
+  width:50%;
+  height:80vh;
+}
+
+.rightRowContiner{
+  background-color: olivedrab;
+  width: 50vh;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+/* left side */
+#leftDiv{
+  background-color: bisque;
+  width:50%;
+  height:80vh;
+}
+
+.leftRowContiner{
+  background-color: brown;
+  width: 50vh;
+  height: 80vh;
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.leftRow{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  border: black 5px dotted;
+}
+
+.statDisplay{
+  box-sizing: border-box;
+  border: black 1px solid;
+  width: 42vh;
+  height: 18vh;
+}
+
+/* Components */
+.InventoryBox{
+  box-sizing: border-box;
+  border: black 1px solid;
+  width: 18vh;
+  height: 18vh;
+}
+
+.damageBox, .rightRow{
+  height: 25vh;
+  box-sizing: border-box;
+  border: black 5px dotted;
 }
