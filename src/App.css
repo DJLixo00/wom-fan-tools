@@ -70,11 +70,16 @@
 }
 
 /* Components */
-.inventoryBox{
+.inventoryBox, .inventoryBoxClicked, .fakeInvBox{
+  background: transparent;
   box-sizing: border-box;
   border: black 1px solid;
   width: 18vh;
   height: 18vh;
+}
+
+.inventoryBoxClicked{
+  background: rgba(255, 255, 0, 0.5);
 }
 
 .damageBox, .rightRow{

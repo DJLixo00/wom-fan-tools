@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 class InventoryBox extends Component {
   state = {  
-    item: "empty"
+    item: "empty",
   } 
 
-  constructor(){
-    super();
+  constructor(prop){
+    super(prop);
     this.handleEquip = this.handleEquip.bind(this)
+    
   }
 
   extractItem(id, type) {
@@ -15,13 +16,20 @@ class InventoryBox extends Component {
   }
 
   handleEquip() {
-    // this.setState() don't modify state directly because it won't render
-    console.log("equip box clicked! This box contains "+this.state.item)
+    console.log(
+      `equip box ${this.props.boxId} 
+      contains ${this.state.item}
+      selected ${this.props.boxSelected}`
+    )
+
   }
 
   render() { 
+
+    let invBoxColor = this.props.boxSelected == this.props.boxId ? 'inventoryBoxClicked' : 'inventoryBox';
+
     return (
-      <div className="inventoryBox" onClick={this.handleEquip}>
+      <div className={invBoxColor} onClick={()=>this.props.clicked(this.props.boxId)}>
         {"InventoryBox"}
       </div>
     );

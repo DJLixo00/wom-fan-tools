@@ -1,53 +1,51 @@
-import InventoryBox from './InventoryBox';
+import React, { Component } from 'react';
+
 import DamageBox from './DamageBox';
+import LeftSide from './LeftSide';
 
-function MainBox() {
-  return (
-    <div className="mainBox">
-      <div id="topDiv" className="mainDiv">
-        top
-      </div>
+class MainBox extends Component {
+  state = {  
 
-      <div id="leftDiv" className="mainDiv">
-        <div className='leftRowContiner'>
-          <div className='leftRow'>
-            <InventoryBox/>
-            <InventoryBox/>
+  } 
+
+  constructor(){
+    super();
+    this.handleInvBoxClick = this.handleInvBoxClick.bind(this)
+  }
+
+  handleInvBoxClick() {
+
+  }
+
+  render() { 
+    return(
+      <div className="mainBox">
+        <div id="topDiv" className="mainDiv">
+          top
+        </div>
+
+        <LeftSide/>
+
+        <div id="rightDiv" className="mainDiv">
+          
+          <div className='rightRowContiner selectionContiner' style={{display:'none'}}>
+            hide this div
           </div>
 
-          <div className='leftRow'>
-            <InventoryBox/>
-            <InventoryBox/>
-          </div>
-
-          <div className='leftRow'>
-            <InventoryBox/>
-            <InventoryBox/>
-          </div>
-
-          <div className='leftRow'>
-            <div className='statDisplay'>
-              statDisplay
-            </div>
+          <div className='rightRowContiner damageBoxContiner'>
+            {/* will insert DamageBox here */}
+            {/* <DamageBox/> */}
+            <div className='rightRow'>here's a row</div>
           </div>
 
         </div>
-      </div>
 
-      <div id="rightDiv" className="mainDiv">
-        <div className='rightRowContiner'>
-          {/* will insert DamageBox here */}
-          {/* <DamageBox/> */}
-          <div className='rightRow'></div>
-  
+        <div id="bottomDiv" className="mainDiv">
+          bottom
         </div>
       </div>
-
-      <div id="bottomDiv" className="mainDiv">
-        bottom
-      </div>
-    </div>
-  );
+    )
+  }
 }
 
 export default MainBox;
