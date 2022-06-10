@@ -1,4 +1,4 @@
-function inventoryBox() {
+function InventoryBox() {
     return (
       <div className="InventoryBox">
         InventoryBox
@@ -6,5 +6,5 @@ function inventoryBox() {
     );
   }
   
-  export default inventoryBox;
+  export default InventoryBox;
   

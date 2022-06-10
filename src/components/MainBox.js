@@ -1,7 +1,7 @@
-import inventoryBox from './inventoryBox';
-import damageBox from './damageBox';
+import InventoryBox from './InventoryBox';
+import DamageBox from './DamageBox';
 
-function mainBox() {
+function MainBox() {
   return (
     <div className="mainBox">
       <div id="topDiv" className="mainDiv">
@@ -11,18 +11,18 @@ function mainBox() {
       <div id="leftDiv" className="mainDiv">
         <div className='leftRowContiner'>
           <div className='leftRow'>
-            <inventoryBox/>
-            <inventoryBox/>
+            <InventoryBox/>
+            <InventoryBox/>
           </div>
 
           <div className='leftRow'>
-            <inventoryBox/>
-            <inventoryBox/>
+            <InventoryBox/>
+            <InventoryBox/>
           </div>
 
           <div className='leftRow'>
-            <inventoryBox/>
-            <inventoryBox/>
+            <InventoryBox/>
+            <InventoryBox/>
           </div>
 
           <div className='leftRow'>
@@ -50,4 +50,4 @@ function mainBox() {
   );
 }
 
-export default mainBox;
+export default MainBox;
