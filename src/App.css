@@ -70,7 +70,7 @@
 }
 
 /* Components */
-.InventoryBox{
+.inventoryBox{
   box-sizing: border-box;
   border: black 1px solid;
   width: 18vh;
