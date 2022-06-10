@@ -36,6 +36,14 @@
   overflow-y: auto;
 }
 
+.rightInvRow{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  border: transparent 5px solid;
+}
+
 /* left side */
 #leftDiv{
   background-color: bisque;

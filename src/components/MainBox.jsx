@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import DamageBox from './DamageBox';
 import LeftSide from './LeftSide';
+import RightSide from './RightSide';
 
 class MainBox extends Component {
   state = {  
@@ -27,17 +28,7 @@ class MainBox extends Component {
         <LeftSide/>
 
         <div id="rightDiv" className="mainDiv">
-          
-          <div className='rightRowContiner selectionContiner' style={{display:'none'}}>
-            hide this div
-          </div>
-
-          <div className='rightRowContiner damageBoxContiner'>
-            {/* will insert DamageBox here */}
-            {/* <DamageBox/> */}
-            <div className='rightRow'>here's a row</div>
-          </div>
-
+          <RightSide/>
         </div>
 
         <div id="bottomDiv" className="mainDiv">

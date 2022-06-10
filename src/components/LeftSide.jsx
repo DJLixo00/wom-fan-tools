@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InventoryBox from './InventoryBox';
 
-class Leftside extends Component {
+class LeftSide extends Component {
     state = {  
         boxSelected:-1,
     } 
@@ -26,17 +26,17 @@ class Leftside extends Component {
         <div id="leftDiv" className="mainDiv">
           <div className='leftRowContiner'>
             <div className='leftRow'>
-              <InventoryBox boxId = {0} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected}/>
-              <InventoryBox boxId = {1} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected}/>
+              <InventoryBox boxId = {0} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
+              <InventoryBox boxId = {1} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
             </div>
 
             <div className='leftRow'>
-              <InventoryBox boxId = {2} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected}/>
-              <InventoryBox boxId = {3} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected}/>
+              <InventoryBox boxId = {2} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
+              <InventoryBox boxId = {3} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
             </div>
 
             <div className='leftRow'>
-              <InventoryBox boxId = {4} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected}/>
+              <InventoryBox boxId = {4} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
               <div className = 'fakeInvBox'> fake box to take up space</div>
             </div>
 
@@ -52,4 +52,4 @@ class Leftside extends Component {
     }
 }
  
-export default Leftside;
+export default LeftSide;

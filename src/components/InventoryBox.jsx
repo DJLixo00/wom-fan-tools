@@ -7,7 +7,7 @@ class InventoryBox extends Component {
 
   constructor(prop){
     super(prop);
-    this.handleEquip = this.handleEquip.bind(this)
+    // this.handleEquip = this.handleEquip.bind(this)
     
   }
 
@@ -15,24 +15,23 @@ class InventoryBox extends Component {
     // Takes the item's data from JSON
   }
 
-  handleEquip() {
-    console.log(
-      `equip box ${this.props.boxId} 
-      contains ${this.state.item}
-      selected ${this.props.boxSelected}`
-    )
-
-  }
-
   render() { 
+    if (this.props.type == "equip") {
+      let invBoxColor = this.props.boxSelected == this.props.boxId ? 'inventoryBoxClicked' : 'inventoryBox';
 
-    let invBoxColor = this.props.boxSelected == this.props.boxId ? 'inventoryBoxClicked' : 'inventoryBox';
+      return (
+        <div className={invBoxColor} onClick={()=>this.props.clicked(this.props.boxId)}>
+          {"InventoryBox"}
+        </div>
+      );
 
-    return (
-      <div className={invBoxColor} onClick={()=>this.props.clicked(this.props.boxId)}>
-        {"InventoryBox"}
-      </div>
-    );
+    } else {
+      return (
+        <div className="inventoryBox" onClick={()=>console.log("aa")}>
+          {"InventoryBox"}
+        </div>
+      );
+    }
   }
 
 }
