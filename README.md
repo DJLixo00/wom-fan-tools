@@ -70,8 +70,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ___
+# wom-fan-tool
+Fan made tool for calculating the damage in the Roblox game World of Magic.
+
+This means calculating damage of spells and weapons based on the stats from your equip (power/strength).
+
+Link to the web page will be added here once it's finished and deployed.
+
 ## Todo:
 - [ ] js
+- [ ] JSON files for storing properties of the equipments
+- [ ] Capture icons and images in game
 - [ ] make UI look better
 - [ ] make back ground not loop
 - [ ] add about and acknowledgement page
