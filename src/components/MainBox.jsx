@@ -6,16 +6,23 @@ import RightSide from './RightSide';
 
 class MainBox extends Component {
   state = {  
-
+    selectionMode:false
   } 
 
   constructor(){
     super();
-    this.handleInvBoxClick = this.handleInvBoxClick.bind(this)
+    this.handleLeftIBClick = this.handleLeftIBClick.bind(this)
+    this.handleRightIBClick = this.handleRightIBClick.bind(this)
+
   }
 
-  handleInvBoxClick() {
+  handleLeftIBClick() {
+    // console.log("an inventory box in the leftside has been clicked")
+    this.setState({selectionMode: !this.state.selectionMode})
+  }
 
+  handleRightIBClick() {
+    console.log("an inventory box in the rightside has been clicked")
   }
 
   render() { 
@@ -25,10 +32,10 @@ class MainBox extends Component {
           top
         </div>
 
-        <LeftSide/>
+        <LeftSide mainHandler = {this.handleLeftIBClick}/>
 
         <div id="rightDiv" className="mainDiv">
-          <RightSide/>
+          <RightSide mainHandler = {this.handleRightIBClick} selectionMode={this.state.selectionMode}/>
         </div>
 
         <div id="bottomDiv" className="mainDiv">

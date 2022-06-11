@@ -4,6 +4,7 @@ import InventoryBox from './InventoryBox';
 class LeftSide extends Component {
     state = {  
         boxSelected:-1,
+        pervBoxSel:-1,
     } 
 
     constructor(){
@@ -14,10 +15,17 @@ class LeftSide extends Component {
     assignClicked(id) {
         let boxId = id == this.state.boxSelected ? -1 : id;        
         this.setState({
+            pervBoxSel:this.state.boxSelected,
             boxSelected:boxId
-            },
-            // () => console.log(this.state.boxSelected)
-            )
+        },
+            ()=>{
+                // console.log(this.state.boxSelected)
+                let shouldChange = this.state.boxSelected == -1 || this.state.pervBoxSel == -1
+                if (shouldChange) {
+                    this.props.mainHandler();
+                }
+            }
+        )
         //stuff put here may run before state updates because setState is async
     }
 

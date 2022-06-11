@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import InventoryBox from './InventoryBox';
 
 class RightSide extends Component {
-    state = {  
-        selectionMode:true,
-    } 
+    state = {   } 
 
     constructor(){
         super();
@@ -21,7 +19,7 @@ class RightSide extends Component {
             )
         }
 
-        if (this.state.selectionMode) {
+        if (this.props.selectionMode) {
             return (
                 <div className='rightRowContiner selectionContiner'>
                     {
