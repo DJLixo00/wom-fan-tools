@@ -8,7 +8,8 @@ class RightSide extends Component {
         super();
     }
     
-    render() { 
+    render() {         
+
         let boxArr = []
         for (let i = 0; i < 5; i++) {
             boxArr.push(
@@ -32,7 +33,7 @@ class RightSide extends Component {
                 <div className='rightRowContiner damageBoxContiner'>
                     {/* will insert DamageBox here */}
                     {/* <DamageBox/> */}
-                    <div className='rightRow'>here's a row</div>
+                    <div className='rightRow'>{"text"}</div>
                 </div>
             )
         }

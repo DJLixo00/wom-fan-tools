@@ -50,7 +50,7 @@ class LeftSide extends Component {
 
             <div className='leftRow'>
               <div className='statDisplay'>
-                statDisplay
+                {this.state.boxSelected}
               </div>
             </div>
 

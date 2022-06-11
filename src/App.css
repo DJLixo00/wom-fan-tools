@@ -87,7 +87,7 @@
 }
 
 .inventoryBoxClicked{
-  background: rgba(255, 255, 0, 0.5);
+  border: rgba(255, 255, 0, 0.5) solid 5px;
 }
 
 .damageBox, .rightRow{

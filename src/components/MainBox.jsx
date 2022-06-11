@@ -26,6 +26,7 @@ class MainBox extends Component {
   }
 
   render() { 
+    console.log(this.props.data.OBJ.equipment)
     return(
       <div className="mainBox">
         <div id="topDiv" className="mainDiv">
