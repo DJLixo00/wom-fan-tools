@@ -84,6 +84,8 @@
   border: black 1px solid;
   width: 18vh;
   height: 18vh;
+  text-align: center;
+  overflow: hidden;
 }
 
 .fakeInvBox{

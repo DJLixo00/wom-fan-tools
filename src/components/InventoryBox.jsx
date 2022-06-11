@@ -11,10 +11,6 @@ class InventoryBox extends Component {
     
   }
 
-  extractItem(id, type) {
-    // Takes the item's data from JSON
-  }
-
   render() {
     
     switch (this.props.type) {
@@ -23,7 +19,7 @@ class InventoryBox extends Component {
 
         return (
           <div className={invBoxColor} onClick={()=>this.props.clicked(this.props.boxId)}>
-            {"InventoryBox"}
+            {this.props.text == null ? "InventoryBox":this.props.text}
           </div>
         );
 
@@ -43,7 +39,9 @@ class InventoryBox extends Component {
 
       default:
         return (
-          <div className="inventoryBox" onClick={()=>console.log("aa")}>
+          <div className="inventoryBox" onClick={
+            ()=>this.props.clicked(this.props.item, this.props.stats)
+          }>
             {this.props.text == null ? "InventoryBox":this.props.text}
           </div>
         );

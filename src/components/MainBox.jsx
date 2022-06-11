@@ -7,7 +7,8 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
-    rightItemType:undefined
+    rightItemType:undefined,
+    leftSideItems:[{},{},{},{},{}]
   } 
 
   constructor(){
@@ -27,8 +28,12 @@ class MainBox extends Component {
     // console.log(id)
   }
 
-  handleRightIBClick() {
-    console.log("an inventory box in the rightside has been clicked")
+  handleRightIBClick(item) {
+    // console.log("an inventory box in the rightside has been clicked")
+    this.setState({
+      leftSideItems:this.state.leftSideItems
+    })
+    console.log(item)
   }
 
   render() { 

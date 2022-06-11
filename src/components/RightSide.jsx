@@ -8,6 +8,20 @@ class RightSide extends Component {
 
     constructor(){
         super();
+        this.handleInvSelect = this.handleInvSelect.bind(this)
+    }
+
+    handleInvSelect(boxName, boxStats) {
+        /**
+         * takes the prop item and stats from a invBox on the right side and 
+         * puts it in an obj.
+         * The obj is then pass back to main
+         */
+        let itemSelected = {
+            "name":boxName,
+            "stats":boxStats
+        } 
+        this.props.mainHandler(itemSelected)
     }
 
     unpackData() {
@@ -25,9 +39,17 @@ class RightSide extends Component {
             let rowCounter = 0
             for (let item in equipments) {
                 let itemName = equipments[item]["name"]
+                let itemStats = equipments[item]["stats"]
 
                 smallArr.push(
-                    <InventoryBox type = "inventory" text = {itemName} key = {itemName}/>
+                    <InventoryBox 
+                    key = {itemName}
+                    type = "inventory" 
+                    text = {itemName + " [" + itemStats + "]"} 
+                    item = {itemName}
+                    stats = {itemStats}
+                    clicked = {this.handleInvSelect}
+                    />
                 )
 
                 if (smallArr.length == 2) {
