@@ -95,7 +95,7 @@ const OBJ = {"equipment": {
             "image":""
         },
         "powerAmuletPoor":{
-            "name":"power Amulet [Poor]",
+            "name":"Power Amulet [Poor]",
             "slot":"accessory",
             "rarity":"common",
             "level":[0,50],
@@ -103,7 +103,7 @@ const OBJ = {"equipment": {
             "image":""
         },
         "powerAmuletDull":{
-            "name":"power Amulet [dull]",
+            "name":"Power Amulet [dull]",
             "slot":"accessory",
             "rarity":"common",
             "level":[0,50],
@@ -116,6 +116,14 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,54,0,0,0,0,0,0],
+            "image":""
+        },
+        "defenseAmuletDull":{
+            "name":"Defense Amulet [dull]",
+            "slot":"accessory",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,118,0,0,0,0,0,0],
             "image":""
         },
         "maidSkirt":{

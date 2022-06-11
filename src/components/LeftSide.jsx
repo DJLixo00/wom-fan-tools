@@ -21,9 +21,7 @@ class LeftSide extends Component {
             ()=>{
                 // console.log(this.state.boxSelected)
                 let shouldChange = this.state.boxSelected == -1 || this.state.pervBoxSel == -1
-                if (shouldChange) {
-                    this.props.mainHandler();
-                }
+                  this.props.mainHandler(boxId, shouldChange);
             }
         )
         //stuff put here may run before state updates because setState is async
@@ -45,7 +43,8 @@ class LeftSide extends Component {
 
             <div className='leftRow'>
               <InventoryBox boxId = {4} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
-              <div className = 'fakeInvBox'> fake box to take up space</div>
+              <InventoryBox type = "invisible"/>
+
             </div>
 
             <div className='leftRow'>

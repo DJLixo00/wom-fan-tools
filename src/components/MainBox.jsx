@@ -6,7 +6,8 @@ import RightSide from './RightSide';
 
 class MainBox extends Component {
   state = {  
-    selectionMode:false
+    selectionMode:false,
+    rightItemType:undefined
   } 
 
   constructor(){
@@ -16,9 +17,14 @@ class MainBox extends Component {
 
   }
 
-  handleLeftIBClick() {
+  handleLeftIBClick(id, shouldChange) {
     // console.log("an inventory box in the leftside has been clicked")
-    this.setState({selectionMode: !this.state.selectionMode})
+    this.setState({
+      selectionMode: shouldChange ? !this.state.selectionMode : this.state.selectionMode,
+      rightItemType: ["accessory","chestpiece","accessory","leggings","accessory"][id]
+    })
+
+    console.log(id)
   }
 
   handleRightIBClick() {
@@ -26,7 +32,6 @@ class MainBox extends Component {
   }
 
   render() { 
-    console.log(this.props.data.OBJ.equipment)
     return(
       <div className="mainBox">
         <div id="topDiv" className="mainDiv">
@@ -36,7 +41,12 @@ class MainBox extends Component {
         <LeftSide mainHandler = {this.handleLeftIBClick}/>
 
         <div id="rightDiv" className="mainDiv">
-          <RightSide mainHandler = {this.handleRightIBClick} selectionMode={this.state.selectionMode}/>
+          <RightSide 
+            mainHandler = {this.handleRightIBClick} 
+            selectionMode={this.state.selectionMode} 
+            data = {this.props.data} 
+            itemType = {this.state.rightItemType}
+          />
         </div>
 
         <div id="bottomDiv" className="mainDiv">
