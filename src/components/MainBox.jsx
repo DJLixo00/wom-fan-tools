@@ -24,7 +24,7 @@ class MainBox extends Component {
       rightItemType: ["accessory","chestpiece","accessory","leggings","accessory"][id]
     })
 
-    console.log(id)
+    // console.log(id)
   }
 
   handleRightIBClick() {

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import InventoryBox from './InventoryBox';
 
 class RightSide extends Component {
-    state = {   } 
+    state = {   
+        enchantmentSelected:"clean",
+    } 
 
     constructor(){
         super();
@@ -55,19 +57,26 @@ class RightSide extends Component {
     }
 
     render() {    
-        let boxArr = this.unpackData()
 
         if (this.props.selectionMode) {
             return (
-                <div className='rightRowContiner selectionContiner'>
-                    {
-                     boxArr   
-                    }
+                <div className='rightRowContainer selectionContainer'>
+                    <div className='encButtonContainer'>
+                        <div className='enchantmentButton encPow' onClick={()=>console.log('pow')}></div>
+                        <div className='enchantmentButton encDef' onClick={()=>console.log('def')}></div>
+                        <div className='enchantmentButton encAgi' onClick={()=>console.log('agi')}></div>
+                        <div className='enchantmentButton encStr' onClick={()=>console.log('str')}></div>
+                        <div className='enchantmentButton encCas' onClick={()=>console.log('cas')}></div>
+                        <div className='enchantmentButton encMsp' onClick={()=>console.log('msp')}></div>
+                        <div className='enchantmentButton encSze' onClick={()=>console.log('sze')}></div>
+                        <div className='enchantmentButton encKnb' onClick={()=>console.log('knb')}></div>
+                    </div>
+                    <div className='selectionRowContainer'>{this.unpackData()}</div>
                 </div>
             );
         } else {
             return(
-                <div className='rightRowContiner damageBoxContiner'>
+                <div className='rightRowContainer damageBoxContainer'>
                     {/* will insert DamageBox here */}
                     {/* <DamageBox/> */}
                     <div className='rightRow'>{"text"}</div>

@@ -30,7 +30,7 @@ class LeftSide extends Component {
     render() { 
         return (
         <div id="leftDiv" className="mainDiv">
-          <div className='leftRowContiner'>
+          <div className='leftRowContainer'>
             <div className='leftRow'>
               <InventoryBox boxId = {0} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>
               <InventoryBox boxId = {1} clicked = {this.assignClicked} boxSelected = {this.state.boxSelected} type = "equip"/>

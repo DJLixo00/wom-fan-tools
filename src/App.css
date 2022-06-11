@@ -29,7 +29,7 @@
   height:80vh;
 }
 
-.rightRowContiner{
+.rightRowContainer{
   background-color: olivedrab;
   width: 50vh;
   height: 80vh;
@@ -51,7 +51,7 @@
   height:80vh;
 }
 
-.leftRowContiner{
+.leftRowContainer{
   background-color: brown;
   width: 50vh;
   height: 80vh;
@@ -91,6 +91,26 @@
   border: transparent;
 }
 
+.encButtonContainer{
+  display: flex;
+  justify-content: space-around;
+  height: 5vh;
+}
+
+.enchantmentButton{
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 5vh;
+  width: 5vh;
+}
+
+.selectionRowContainer{
+  height: 75vh;
+  background-color: violet;
+  overflow-y: auto;
+}
+
 .inventoryBoxClicked{
   border: rgba(255, 255, 0, 0.5) solid 5px;
 }
@@ -99,4 +119,54 @@
   height: 25vh;
   box-sizing: border-box;
   border: black 5px dotted;
+}
+
+
+/* Applying backgrounds to enchantment buttons*/
+.encPow{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconPow.png);
+  background-size: cover;
+}
+
+.encDef{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconDef.png);
+  background-size: cover;
+}
+
+.encAgi{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconAgi.png);
+  background-size: cover;
+}
+
+.encStr{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconStr.png);
+  background-size: cover;
+}
+
+.encCas{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconCas.png);
+  background-size: cover;
+}
+
+.encMsp{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconMsp.png);
+  background-size: cover;
+}
+
+.encSze{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconSze.png);
+  background-size: cover;
+}
+
+.encKnb{
+  background-color: #222222;
+  background-image: url(../public/images/others/iconKnb.png);
+  background-size: cover;
 }
