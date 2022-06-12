@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import InventoryBox from './InventoryBox';
+// import logo from "../logo.svg";
+import iconPow from "../images/others/iconPow.png";
+import iconDef from "../images/others/iconDef.png";
+import iconAgi from "../images/others/iconAgi.png";
+import iconStr from "../images/others/iconStr.png";
+import iconCas from "../images/others/iconCas.png";
+import iconMsp from "../images/others/iconMsp.png";
+import iconSze from "../images/others/iconSze.png";
+import iconKnb from "../images/others/iconKnb.png";
+
 
 class LeftSide extends Component {
     state = {  
@@ -20,7 +30,7 @@ class LeftSide extends Component {
        *  addArrayHelper(a,b) would return [4,6]
        *  a and b must be the same length
       */
-      if (arr1.length != arr2.length) {
+      if (arr1.length !== arr2.length) {
         console.error("arr1 arr2 length mismatch, check your input to addArrayHelper")
       }
 
@@ -40,7 +50,7 @@ class LeftSide extends Component {
       let result = [0,0,0,0,0,0,0,0]
       for (let i = 1; i < this.props.equipped.length; i++) {
         let slot = this.props.equipped[i]["stats"]
-        if (typeof slot == 'undefined') {
+        if (typeof slot === 'undefined') {
           continue;
         } 
         let arr1 = this.props.equipped[i]["stats"]
@@ -51,37 +61,37 @@ class LeftSide extends Component {
       return (
       <div className='statDisplay'>
         <div className='statRow'>
-          <div className='statP'>Power: {result[0]}</div>
-          <div className='statP'>Defense: {result[1]}</div>
+          <div className='statP statPowP'><img src={iconPow}/>Power: {result[0]}</div>
+          <div className='statP statDefP'><img src={iconDef}/>Defense: {result[1]}</div>
         </div>
 
         <div className='statRow'>
-          <div className='statP'>Agility: {result[2]}</div>
-          <div className='statP'>Strength: {result[3]}</div>
+          <div className='statP statAgiP'><img src={iconAgi}/>Agility: {result[2]}</div>
+          <div className='statP statStrP'><img src={iconStr}/>Strength: {result[3]}</div>
         </div>
         
         <div className='statRow'>
-          <div className='statP'>Casting Speed: {result[4]}</div>
-          <div className='statP'>Magic Speed: {result[5]}</div>
+          <div className='statP statCasP'><img src={iconCas}/>Casting Speed: {result[4]}</div>
+          <div className='statP statMspP'><img src={iconMsp}/>Magic Speed: {result[5]}</div>
         </div>
 
         <div className='statRow'>
-          <div className='statP'>Magic Size: {result[6]}</div>
-          <div className='statP'>Knockback: {result[7]}</div>
+          <div className='statP statSzeP'><img src={iconSze}/>Magic Size: {result[6]}</div>
+          <div className='statP statKnbP'><img src={iconKnb}/>Knockback: {result[7]}</div>
         </div>
       </div>
       )
     }
     
     assignClicked(id) {
-        let boxId = id == this.state.boxSelected ? 0 : id; //this line for cancel selection 
+        let boxId = id === this.state.boxSelected ? 0 : id; //this line for cancel selection 
         this.setState({
             pervBoxSel:this.state.boxSelected,
             boxSelected:boxId
         },
             ()=>{
                 // console.log(this.state.boxSelected)
-                let shouldChange = this.state.boxSelected == 0 || this.state.pervBoxSel == 0
+                let shouldChange = this.state.boxSelected === 0 || this.state.pervBoxSel === 0
                   this.props.mainHandler(boxId, shouldChange);
             }
         )

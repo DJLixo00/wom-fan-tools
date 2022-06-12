@@ -32,8 +32,10 @@ class InventoryBox extends Component {
       
       case "removeButton":
         return (
-          <div className="inventoryBoxClicked">
-            Write the code for removing stuff here! Also change the CSS
+          <div className="inventoryBox" onClick={
+            ()=>this.props.clicked(null, [0,0,0,0,0,0,0,0])
+          }>
+            Unequip Button
           </div>
         )
 

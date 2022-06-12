@@ -73,6 +73,7 @@
 .statDisplay{
   box-sizing: border-box;
   border: black 1px solid;
+  background-color: #222222;
   display: flex;
   flex-wrap: wrap;
   width: 42vh;
@@ -88,6 +89,7 @@
 
 .statP {
   width: 50%;
+  font-size: 16px;
 }
 
 /* Components */
@@ -127,7 +129,8 @@
 }
 
 .inventoryBoxClicked{
-  border: rgba(255, 255, 0, 0.5) solid 5px;
+  border: rgb(255, 136, 0) solid 5px;
+  box-shadow: 0px 0px 25px #ffa600;
 }
 
 .damageBox, .rightRow{
@@ -136,52 +139,108 @@
   border: black 5px dotted;
 }
 
+.encSelected {
+  border:#ffc400 2px solid;
+  box-shadow: 0px 0px 25px #ffa600;
+}
 
 /* Applying backgrounds to enchantment buttons*/
 .encPow{
   background-color: #222222;
-  background-image: url(../public/images/others/iconPow.png);
+  background-image: url(images/others/iconPow.png);
   background-size: cover;
 }
 
 .encDef{
   background-color: #222222;
-  background-image: url(../public/images/others/iconDef.png);
+  background-image: url(images/others/iconDef.png);
   background-size: cover;
 }
 
 .encAgi{
   background-color: #222222;
-  background-image: url(../public/images/others/iconAgi.png);
+  background-image: url(images/others/iconAgi.png);
   background-size: cover;
 }
 
 .encStr{
   background-color: #222222;
-  background-image: url(../public/images/others/iconStr.png);
+  background-image: url(images/others/iconStr.png);
   background-size: cover;
 }
 
 .encCas{
   background-color: #222222;
-  background-image: url(../public/images/others/iconCas.png);
+  background-image: url(images/others/iconCas.png);
   background-size: cover;
 }
 
 .encMsp{
   background-color: #222222;
-  background-image: url(../public/images/others/iconMsp.png);
+  background-image: url(images/others/iconMsp.png);
   background-size: cover;
 }
 
 .encSze{
   background-color: #222222;
-  background-image: url(../public/images/others/iconSze.png);
+  background-image: url(images/others/iconSze.png);
   background-size: cover;
 }
 
 .encKnb{
   background-color: #222222;
-  background-image: url(../public/images/others/iconKnb.png);
+  background-image: url(images/others/iconKnb.png);
   background-size: cover;
+}
+/* Applying color to stat display text*/
+.statPowP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(255, 136, 0);
+  font-weight: bold;
+}
+.statDefP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(160, 160, 160);
+  font-weight: bold;
+}
+  
+.statAgiP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(103, 176, 183);
+  font-weight: bold;
+}
+.statStrP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(255, 251, 0);
+  font-weight: bold;
+}
+
+.statCasP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:rgba(0, 0, 0, 0.8);
+  color:rgb(184, 255, 169);
+  font-weight: bold;
+}
+.statMspP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(255, 98, 125);
+  font-weight: bold;
+}
+   
+.statSzeP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(3, 237, 12);
+  font-weight: bold;
+}
+.statKnbP{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(155, 180, 180);
+  font-weight: bold;
 }

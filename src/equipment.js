@@ -11,7 +11,7 @@ const OBJ = {"equipment": {
             "name":"Wizard Robe",
             "rarity":"common",
             "level":[50,90],
-            "stats":[15,0,0,0,0,0,0,0],
+            "stats":[22,0,0,0,0,0,0,0],
             "image":""
         },
         "ironArmor":{
@@ -19,6 +19,34 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,108,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherArmorDL":{
+            "name":"Dark/Light Leather Armor",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,62,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherArmor":{
+            "name":"Leather Armor",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,34,0,0,0,0,0,0],
+            "image":""
+        },
+        "huntingArmor":{
+            "name":"Hunting Armor",
+            "rarity":"uncommon",
+            "level":[20,80],
+            "stats":[0,80,0,0,0,0,0,0],
+            "image":""
+        },
+        "culture chestpiece":{
+            "name":"Culture Chestpiece",
+            "rarity":"uncommon",
+            "level":[10,40],
+            "stats":[0,40,0,0,0,0,0,0],
             "image":""
         },
         "mercenaryJacket":{
@@ -32,7 +60,7 @@ const OBJ = {"equipment": {
             "name":"Maid Top",
             "rarity":"common",
             "level":[50,90],
-            "stats":[0,0,0,0,15,0,0,0],
+            "stats":[0,0,0,15,0,0,0,0],
             "image":""
         }
     },
@@ -50,6 +78,34 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,54,0,0,0,0,0,0],
+            "image":""
+        },
+        "LeatherPantsDL":{
+            "name":"Dark/Light Leather Hat",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,31,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherPants":{
+            "name":"Leather Pants",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,17,0,0,0,0,0,0],
+            "image":""
+        },
+        "huntingBoots":{
+            "name":"Hunting Boots",
+            "rarity":"uncommon",
+            "level":[20,80],
+            "stats":[0,40,0,0,0,0,0,0],
+            "image":""
+        },
+        "cultureLeggings":{
+            "name":"Culture Leggings",
+            "rarity":"uncommon",
+            "level":[10,40],
+            "stats":[0,20,0,0,0,0,0,0],
             "image":""
         },
         "mercenaryBoots":{
@@ -76,7 +132,7 @@ const OBJ = {"equipment": {
             "stats":[6,0,0,0,0,0,0,0],
             "image":""
         },
-        "cultureItem":{
+        "cultureAccessory":{
             "name":"Culture Accessory",
             "rarity":"common",
             "level":[0,40],
@@ -93,7 +149,7 @@ const OBJ = {"equipment": {
         "powerAmuletDull":{
             "name":"Power Amulet [dull]",
             "rarity":"common",
-            "level":[0,50],
+            "level":[50,90],
             "stats":[25,0,0,0,0,0,0,0],
             "image":""
         },
@@ -102,6 +158,48 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,54,0,0,0,0,0,0],
+            "image":""
+        },
+        "priateCaptainsHat":{
+            "name":"Priate Captain's Hat",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,54,0,0,0,0,0,0],
+            "image":""
+        },
+        "tricornHat":{
+            "name":"Tricon Hat",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,54,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherHelmetDL":{
+            "name":"Dark/Light Leather Helmet",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,31,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherHelmet":{
+            "name":"Leather Helmet",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,17,0,0,0,0,0,0],
+            "image":""
+        },
+        "travellersBackpack":{
+            "name":"Traveller's Backpack",
+            "rarity":"uncommon",
+            "level":[50,90],
+            "stats":[0,31,0,0,0,0,0,0],
+            "image":""
+        },
+        "defenseAmuletPoor":{
+            "name":"Defense Amulet [poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,60,0,0,0,0,0,0],
             "image":""
         },
         "defenseAmuletDull":{
