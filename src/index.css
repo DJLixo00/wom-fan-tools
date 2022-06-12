@@ -8,6 +8,8 @@ body {
   background-color: #222222;
 
   background-image: url(../public/images/others/background1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {

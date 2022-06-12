@@ -7,8 +7,9 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
+    leftBoxId:0,
     rightItemType:undefined,
-    leftSideItems:[{},{},{},{},{}]
+    leftSideItems:[{},{},{},{},{},{}]
   } 
 
   constructor(){
@@ -22,7 +23,10 @@ class MainBox extends Component {
     // console.log("an inventory box in the leftside has been clicked")
     this.setState({
       selectionMode: shouldChange ? !this.state.selectionMode : this.state.selectionMode,
-      rightItemType: ["accessory","chestpiece","accessory","leggings","accessory"][id]
+      leftBoxId:id,
+      //note: index 0 is "chestpiece", 
+      //but that's just there to keep it from crashing, 0 means none selected
+      rightItemType: ["chestpiece","accessory","chestpiece","accessory","leggings","accessory"][id]
     })
 
     // console.log(id)
@@ -30,10 +34,11 @@ class MainBox extends Component {
 
   handleRightIBClick(item) {
     // console.log("an inventory box in the rightside has been clicked")
+    let newLeftSideItems = this.state.leftSideItems
+    newLeftSideItems[this.state.leftBoxId] = item
     this.setState({
-      leftSideItems:this.state.leftSideItems
+      leftSideItems:newLeftSideItems
     })
-    console.log(item)
   }
 
   render() { 
@@ -43,7 +48,7 @@ class MainBox extends Component {
           top
         </div>
 
-        <LeftSide mainHandler = {this.handleLeftIBClick}/>
+        <LeftSide mainHandler = {this.handleLeftIBClick} equipped = {this.state.leftSideItems}/>
 
         <div id="rightDiv" className="mainDiv">
           <RightSide 

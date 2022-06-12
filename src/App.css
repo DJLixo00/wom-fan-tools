@@ -73,8 +73,21 @@
 .statDisplay{
   box-sizing: border-box;
   border: black 1px solid;
+  display: flex;
+  flex-wrap: wrap;
   width: 42vh;
   height: 18vh;
+}
+
+.statRow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 2vh;
+}
+
+.statP {
+  width: 50%;
 }
 
 /* Components */
