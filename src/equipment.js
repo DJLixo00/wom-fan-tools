@@ -21,8 +21,15 @@ const OBJ = {"equipment": {
             "stats":[0,108,0,0,0,0,0,0],
             "image":""
         },
-        "leatherArmorDL":{
-            "name":"Dark/Light Leather Armor",
+        "leatherArmorD":{
+            "name":"Dark Leather Armor",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,62,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherArmorL":{
+            "name":"Light Leather Armor",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,62,0,0,0,0,0,0],
@@ -80,8 +87,15 @@ const OBJ = {"equipment": {
             "stats":[0,54,0,0,0,0,0,0],
             "image":""
         },
-        "LeatherPantsDL":{
-            "name":"Dark/Light Leather Hat",
+        "LeatherPantsD":{
+            "name":"Dark Leather Hat",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,31,0,0,0,0,0,0],
+            "image":""
+        },
+        "LeatherPantsL":{
+            "name":"Light Leather Hat",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,31,0,0,0,0,0,0],
@@ -174,8 +188,15 @@ const OBJ = {"equipment": {
             "stats":[0,54,0,0,0,0,0,0],
             "image":""
         },
-        "leatherHelmetDL":{
-            "name":"Dark/Light Leather Helmet",
+        "leatherHelmetD":{
+            "name":"Dark Leather Helmet",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,31,0,0,0,0,0,0],
+            "image":""
+        },
+        "leatherHelmetL":{
+            "name":"Light Leather Helmet",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,31,0,0,0,0,0,0],

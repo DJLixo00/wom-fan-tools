@@ -79,6 +79,7 @@ class LeftSide extends Component {
           <div className='statP statSzeP'><img src={iconSze}/>Magic Size: {result[6]}</div>
           <div className='statP statKnbP'><img src={iconKnb}/>Knockback: {result[7]}</div>
         </div>
+        <div className='statRow'><div className='statHP'>Total Health: {634+result[1]}</div></div>
       </div>
       )
     }

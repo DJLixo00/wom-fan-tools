@@ -85,6 +85,10 @@
   flex-wrap: wrap;
   width: 100%;
   height: 2vh;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 .statP {
@@ -129,7 +133,7 @@
 }
 
 .inventoryBoxClicked{
-  border: rgb(255, 136, 0) solid 5px;
+  border: rgb(255, 255, 255) solid 5px;
   box-shadow: 0px 0px 25px #ffa600;
 }
 
@@ -243,4 +247,8 @@
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
   color:rgb(155, 180, 180);
   font-weight: bold;
+}
+
+.statHP{
+  margin: auto;
 }
