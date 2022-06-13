@@ -161,7 +161,7 @@ const OBJ = {"equipment": {
             "image":""
         },
         "powerAmuletDull":{
-            "name":"Power Amulet [dull]",
+            "name":"Power Amulet [Dull]",
             "rarity":"common",
             "level":[50,90],
             "stats":[25,0,0,0,0,0,0,0],
@@ -209,6 +209,13 @@ const OBJ = {"equipment": {
             "stats":[0,17,0,0,0,0,0,0],
             "image":""
         },
+        "strawHat":{
+            "name":"Straw Hat",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,27,0,0,0,0,0,0],
+            "image":""
+        },
         "travellersBackpack":{
             "name":"Traveller's Backpack",
             "rarity":"uncommon",
@@ -217,17 +224,94 @@ const OBJ = {"equipment": {
             "image":""
         },
         "defenseAmuletPoor":{
-            "name":"Defense Amulet [poor]",
+            "name":"Defense Amulet [Poor]",
             "rarity":"common",
             "level":[0,50],
             "stats":[0,60,0,0,0,0,0,0],
             "image":""
         },
         "defenseAmuletDull":{
-            "name":"Defense Amulet [dull]",
+            "name":"Defense Amulet [Dull]",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,118,0,0,0,0,0,0],
+            "image":""
+        },
+        "cape":{
+            "name":"Cape",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,22,0,0,0,0,0],
+            "image":""
+        },
+        "hood":{
+            "name":"Hood",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,22,0,0,0,0,0],
+            "image":""
+        },
+        "gildedWings":{
+            "name":"Gilded Wings",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,22,0,0,0,0,0],
+            "image":""
+        },
+        "bandana":{
+            "name":"Bandana",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,12,0,0,0,0,0],
+            "image":""
+        },
+        "clownNose":{
+            "name":"Clown Nose",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,12,0,0,0,0,0],
+            "image":""
+        },
+        "skirt":{
+            "name":"Skirt",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,12,0,0,0,0,0],
+            "image":""
+        },
+        "blackBandedFedora":{
+            "name":"Black-Banded Fedora",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,12,0,0,0,0,0],
+            "image":""
+        },
+        "whiteBandedFedora":{
+            "name":"White-Banded Fedora",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,12,0,0,0,0,0],
+            "image":""
+        },
+        "winterCap":{
+            "name":"Winter Cap",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,12,0,0,0,0,0],
+            "image":""
+        },
+        "agilityAmuletPoor":{
+            "name":"Agility Amulet [Poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,15,0,0,0,0,0],
+            "image":""
+        },
+        "agilityAmuletDull":{
+            "name":"Agility Amulet [Dull]",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,29,0,0,0,0,0],
             "image":""
         },
         "maidSkirt":{
@@ -235,6 +319,69 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,0,0,11,0,0,0,0],
+            "image":""
+        },
+        "sailorsHeadBand":{
+            "name":"Sailor's Head Band",
+            "rarity":"uncommon",
+            "level":[50,90],
+            "stats":[0,0,0,11,0,0,0,0],
+            "image":""
+        },
+        "dualBracelets":{
+            "name":"Dual Bracelets",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,11,0,0,0,0],
+            "image":""
+        },
+        "headband":{
+            "name":"Dual Bracelets",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,6,0,0,0,0],
+            "image":""
+        },
+        "mysteriousMask":{
+            "name":"Mysterious Mask",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,6,0,0,0,0],
+            "image":""
+        },
+        "strengthAmuletPoor":{
+            "name":"Strength Amulet [Poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,13,0,0,0,0],
+            "image":""
+        },
+        "strengthAmuletDull":{
+            "name":"Strength Amulet [Dull]",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,25,0,0,0,0],
+            "image":""
+        },
+        "canvasHat":{
+            "name":"Canvas Hat",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,12,0,0,0],
+            "image":""
+        },
+        "castingSpeedAmulePoor":{
+            "name":"Casting Speed Amulet [Poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,15,0,0,0],
+            "image":""
+        },
+        "castingSpeedAmuletDull":{
+            "name":"Casting Speed Amulet [Dull]",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,29,0,0,0],
             "image":""
         },
     },

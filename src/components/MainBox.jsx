@@ -7,6 +7,7 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
+    damageCalMode:true,
     leftBoxId:0,
     rightItemType:undefined,
     leftSideItems:[{},{},{},{},{},{}]
@@ -48,7 +49,11 @@ class MainBox extends Component {
           top
         </div>
 
-        <LeftSide mainHandler = {this.handleLeftIBClick} equipped = {this.state.leftSideItems}/>
+        <LeftSide 
+          mainHandler = {this.handleLeftIBClick} 
+          equipped = {this.state.leftSideItems}
+          damageCalMode = {this.state.damageCalMode}
+        />
 
         <div id="rightDiv" className="mainDiv">
           <RightSide 

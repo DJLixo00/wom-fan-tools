@@ -101,64 +101,136 @@ class LeftSide extends Component {
 
     render() { 
         let equipped = this.props.equipped
-        return (
-        <div id="leftDiv" className="mainDiv">
-          <div className='leftRowContainer'>
-            <div className='leftRow'>
-              <InventoryBox 
-                boxId = {1} 
-                clicked = {this.assignClicked} 
-                boxSelected = {this.state.boxSelected} 
-                type = "equip" 
-                text = {equipped[1]["name"]}
-              />
 
-              <InventoryBox 
-                boxId = {2} 
-                clicked = {this.assignClicked} 
-                boxSelected = {this.state.boxSelected} 
-                type = "equip"
-                text = {equipped[2]["name"]}
-              />
+        if (this.props.damageCalMode) {
+          return(
+            <div id="leftDiv" className="mainDiv">
+              <div className='leftDamageContainer'>
+
+                <div className='selectContainer'>
+                  <div>Select Magic</div>
+                  <select 
+                    id = 'selectMagic'
+                    onChange={
+                    ()=>console.log(document.getElementById("selectMagic").options)
+                    }>
+                    <option>Select Magic</option>
+                    <option>exmaple</option>
+                  </select>
+                </div>
+                
+                <div className='selectContainer'>
+                  <div>Select Spell type</div>
+                  <select>
+                    <option>Select Spell type</option>
+                    <option>Blast</option>
+                    <option>Explosion</option>
+                    <option>Beam</option>
+                  </select>
+                </div>
+
+                <div className='selectContainer'>
+                  <div>Select Self/Place</div>
+                  <select>
+                    <option>Self</option>
+                    <option>Placed</option>
+                  </select>
+                </div>
+
+                <div className='selectContainer'>
+                  <div>Select Amount</div>
+                  <select>
+                    <option>1x</option>
+                  </select>
+                </div>
+
+                <div className='selectContainer'>
+                  <div>Select Size</div>
+                  <select>
+                    <option>100%</option>
+                  </select>
+                </div>
+                
+                <div className='selectContainer'>
+                  <div>Select Status</div>
+                  <select>
+                    <option>Bleeding</option>
+                  </select>
+                  <button>add status</button>
+                </div>
+                <br></br>
+                <div className='selectContainer'>
+                  <div>The Following Status Are Selected:</div>
+                  <div className='statusContainer'>
+
+                  </div>
+                </div>
+
+              </div>
             </div>
-
-            <div className='leftRow'>
-              <InventoryBox 
-                boxId = {3} 
-                clicked = {this.assignClicked} 
-                boxSelected = {this.state.boxSelected} 
-                type = "equip"
-                text = {equipped[3]["name"]}
-              />
-
-              <InventoryBox 
-                boxId = {4} 
-                clicked = {this.assignClicked} 
-                boxSelected = {this.state.boxSelected} 
-                type = "equip"
-                text = {equipped[4]["name"]}
-              />
+          )
+        } else {
+          return (
+            <div id="leftDiv" className="mainDiv">
+              <div className='leftRowContainer'>
+                <div className='leftRow'>
+                  <InventoryBox 
+                    boxId = {1} 
+                    clicked = {this.assignClicked} 
+                    boxSelected = {this.state.boxSelected} 
+                    type = "equip" 
+                    text = {equipped[1]["name"]}
+                  />
+  
+                  <InventoryBox 
+                    boxId = {2} 
+                    clicked = {this.assignClicked} 
+                    boxSelected = {this.state.boxSelected} 
+                    type = "equip"
+                    text = {equipped[2]["name"]}
+                  />
+                </div>
+  
+                <div className='leftRow'>
+                  <InventoryBox 
+                    boxId = {3} 
+                    clicked = {this.assignClicked} 
+                    boxSelected = {this.state.boxSelected} 
+                    type = "equip"
+                    text = {equipped[3]["name"]}
+                  />
+  
+                  <InventoryBox 
+                    boxId = {4} 
+                    clicked = {this.assignClicked} 
+                    boxSelected = {this.state.boxSelected} 
+                    type = "equip"
+                    text = {equipped[4]["name"]}
+                  />
+                </div>
+  
+                <div className='leftRow'>
+                  <InventoryBox 
+                    boxId = {5} 
+                    clicked = {this.assignClicked} 
+                    boxSelected = {this.state.boxSelected} 
+                    type = "equip"
+                    text = {equipped[5]["name"]}
+                  />
+                  <InventoryBox type = "invisible"/>
+  
+                </div>
+  
+                <div className='leftRow'>
+                  {this.calculateGearStats()}
+                </div>
+  
+              </div>
             </div>
+          );
+        }
 
-            <div className='leftRow'>
-              <InventoryBox 
-                boxId = {5} 
-                clicked = {this.assignClicked} 
-                boxSelected = {this.state.boxSelected} 
-                type = "equip"
-                text = {equipped[5]["name"]}
-              />
-              <InventoryBox type = "invisible"/>
-
-            </div>
-
-            <div className='leftRow'>
-              {this.calculateGearStats()}
-            </div>
-
-          </div>
-        </div>
-        );
+        
     }
 }
  

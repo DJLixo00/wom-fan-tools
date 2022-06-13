@@ -37,7 +37,7 @@ class RightSide extends Component {
     inventory = "empty"
     handleEnchantSelect(enchantId) {
         this.setState({
-            enchantmentSelected: this.state.enchantmentSelected != enchantId? enchantId : 8
+            enchantmentSelected: this.state.enchantmentSelected !== enchantId? enchantId : 8
         })
     }
 
@@ -45,7 +45,7 @@ class RightSide extends Component {
     /**
      * Returns stats with enchanted bonus added, `level` MUST be a key in enchantBonus.
      */
-        if (this.state.enchantmentSelected == 8) {
+        if (this.state.enchantmentSelected === 8) {
             // is clean (not enchanted)
             return stats
         }
@@ -88,7 +88,7 @@ class RightSide extends Component {
                     />
                 )
 
-                if (smallArr.length == 2) {
+                if (smallArr.length === 2) {
                     boxArr.push(
                         <div className='rightInvRow' key={"righbox"+rowCounter}>
                             {smallArr}
@@ -101,7 +101,7 @@ class RightSide extends Component {
 
             // if smallArr isn't empty we have 1 more row to append
             // don't have to reset smallArr because we're at the end
-            if (smallArr.length == 1) {
+            if (smallArr.length === 1) {
                 boxArr.push(
                     <div className='rightInvRow' key={"righbox"+rowCounter}>
                         {smallArr}
