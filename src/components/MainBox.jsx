@@ -7,7 +7,7 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
-    damageCalMode:true,
+    damageCalMode:false,
     leftBoxId:0,
     rightItemType:undefined,
     leftSideItems:[{},{},{},{},{},{}]
@@ -42,7 +42,8 @@ class MainBox extends Component {
     })
   }
 
-  render() { 
+  render() {
+    // console.log(this.props.magicData) 
     return(
       <div className="mainBox">
         <div id="topDiv" className="mainDiv">
@@ -53,6 +54,7 @@ class MainBox extends Component {
           mainHandler = {this.handleLeftIBClick} 
           equipped = {this.state.leftSideItems}
           damageCalMode = {this.state.damageCalMode}
+          magicData = {this.props.magicData}
         />
 
         <div id="rightDiv" className="mainDiv">

@@ -1,4 +1,4 @@
-const OBJ = {"Magic": {
+const OBJ = {"magics": {
     "acid":{
         "damage":0.875,
         "percentDot": 0.05,
@@ -254,8 +254,26 @@ const OBJ = {"Magic": {
         },
     },
     },
-
-    "Status":[
+    "Weapons":{
+        "oldDagger":{
+            "name": "Old Dagger",
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "damage":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "damage":100000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "damage":9999999999999999999
+                }
+            }
+        }
+    },
+    "status":[
         "Bleeding", "Burning", "Scorched", "Melting", 
         "Corroding", "Poisoned", "Blinded", "Inky",
         "Sandy", "Snowy", "Frozen", "Petrified",

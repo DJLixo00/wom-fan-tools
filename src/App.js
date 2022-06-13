@@ -1,6 +1,8 @@
 import './App.css';
 import MainBox from './components/MainBox';
 import EQUIP_DATA from "./equipment.js";
+import Magic_DATA from "./magics.js";
+
 
 function App() {
 
@@ -8,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <MainBox data = {EQUIP_OBJ}/>
+      <MainBox data = {EQUIP_OBJ} magicData = {Magic_DATA}/>
     </div>
   );
 }
