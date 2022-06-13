@@ -1,10 +1,40 @@
-function damageBox() {
-    return (
-      <div className="damageBox">
-        damageBox
-      </div>
-    );
+import React, { Component } from 'react';
+
+class damageBox extends Component {
+  state = {  } 
+
+  listCommaString (arr) {
+    let result = ""
+    arr.forEach(v => {
+      result += v + ", "
+    });
+    result = result.slice(0,result.length - 2)
+    return result
   }
-  
-  export default damageBox;
+
+  render() { 
+    let damage = this.props.damageSummary
+
+    return (
+    <div className="damageBox">
+      <div className='dbName'>
+        <div>{damage.spellName}</div>
+        <button onClick={()=>this.props.delHandler(this.props.dbId)}>Delete</button>
+      </div>
+      <div className='dbStatus'> 
+        Target is: {this.listCommaString(damage.statusList)}
+      </div>
+      <div className='dbSummary'>
+        <div>Total Impact Damage: <span>{damage.impact}</span></div>
+        <div>Total Damage Over Time: <span>{damage.dotSum}</span></div>
+        <div>DoT Per Tick: <span>{damage.dotTick}</span></div>
+        <div>Total Damage: {damage.impact + damage.dotSum}</div>
+        <div>There is {damage.limbLost ? "a":"no"} chance for target to lose a limb.</div>
+      </div>
+
+    </div>);
+  }
+}
+
+export default damageBox;
   

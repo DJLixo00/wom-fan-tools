@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InventoryBox from './InventoryBox';
+import DamageBox from './DamageBox';
 
 class RightSide extends Component {
     state = {   
@@ -119,6 +120,16 @@ class RightSide extends Component {
             "encNotSelected","encNotSelected","encNotSelected","encNotSelected",
             "encNotSelected","encNotSelected","encNotSelected","encNotSelected","encNotSelected"]
         enchantButtonClassArr[this.state.enchantmentSelected] = "encSelected";
+        
+        let placeHolderDamageBoxOBj = {
+            "spellName":"place holder spell name",
+            "statusList":["list place holder","status2","status3"],
+            "impact":66666,
+            "dotSum":999,
+            "dotTick":9,
+            "bleedDot":-1, //how long does bleed last?
+            "limbLost":true
+        }
 
         if (this.props.selectionMode) {
             return (
@@ -140,7 +151,12 @@ class RightSide extends Component {
             return(
                 <div className='rightRowContainer damageBoxContainer'>
                     {/* will insert DamageBox here */}
-                    {/* <DamageBox/> */}
+                    <DamageBox 
+                        damageSummary = {placeHolderDamageBoxOBj}
+                        dbId = "db1"
+                        delHandler = {(id)=>console.log(id)}
+                    />
+                    {/* this should be a button to add DamageBox */}
                     <div className='rightRow'>{"text"}</div>
                 </div>
             )

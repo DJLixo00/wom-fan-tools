@@ -138,30 +138,68 @@ class LeftSide extends Component {
 
       let blastAmount = [0,20,5,1][this.state.spellType]
       let shouldShow = {
+        magicSel: "dontHideSel",
         selfSplaceSel: "dontHideSel",
         amountSel: "dontHideSel",
-        sizeSel: "dontHideSel"
+        sizeSel: "dontHideSel",
+        attackSel: "dontHideSel",
+        arrowSel:"dontHideSel",
+        weaponSel:"dontHideSel"
       }
       switch (this.state.spellType) {
         case 1: //Blast
           shouldShow.selfSplaceSel = "hideSel"
           shouldShow.amountSel = "dontHideSel" //dummy class, don't give it css
           shouldShow.sizeSel = "dontHideSel"
+          shouldShow.attackSel = "hideSel"
+          shouldShow.magicSel = "dontHideSel"
+          shouldShow.arrowSel = "hideSel"
+          shouldShow.weaponSel = "hideSel"
         break;
         case 2: //Explosion
           shouldShow.selfSplaceSel = "dontHideSel"
           shouldShow.amountSel = "dontHideSel"
           shouldShow.sizeSel = "dontHideSel"
+          shouldShow.attackSel = "hideSel"
+          shouldShow.magicSel = "dontHideSel"
+          shouldShow.arrowSel = "hideSel"
+          shouldShow.weaponSel = "hideSel"
         break;
         case 3: //Beam
           shouldShow.selfSplaceSel = "hideSel"
           shouldShow.amountSel = "hideSel"
           shouldShow.sizeSel = "dontHideSel"
+          shouldShow.attackSel = "hideSel"
+          shouldShow.magicSel = "dontHideSel"
+          shouldShow.arrowSel = "hideSel"
+          shouldShow.weaponSel = "hideSel"
+        break;
+        case 4: //melee
+          shouldShow.selfSplaceSel = "hideSel"
+          shouldShow.amountSel = "hideSel"
+          shouldShow.sizeSel = "hideSel"
+          shouldShow.attackSel = "dontHideSel"
+          shouldShow.magicSel = "hideSel"
+          shouldShow.arrowSel = "hideSel"
+          shouldShow.weaponSel = "dontHideSel"
+        break;
+        case 5: //bows
+          shouldShow.selfSplaceSel = "hideSel"
+          shouldShow.amountSel = "hideSel"
+          shouldShow.sizeSel = "hideSel"
+          shouldShow.attackSel = "hideSel"
+          shouldShow.magicSel = "hideSel"
+          shouldShow.arrowSel = "dontHideSel"
+          shouldShow.weaponSel = "dontHideSel"
         break;
         default: //None
           shouldShow.selfSplaceSel = "hideSel"
           shouldShow.amountSel = "hideSel"
           shouldShow.sizeSel = "hideSel"
+          shouldShow.attackSel = "hideSel"
+          shouldShow.magicSel = "dontHideSel"
+          shouldShow.arrowSel = "hideSel"
+          shouldShow.weaponSel = "hideSel"
       }
 
       let sizeOptionTags = []
@@ -184,23 +222,25 @@ class LeftSide extends Component {
           <div id="leftDiv" className="mainDiv">
             <div className='leftDamageContainer'>
 
-              <div className='selectContainer'>
+             <div className='selectContainer'>
+                <div>Select Spell Type</div>
+                <select id = 'selectSpell' onChange={()=>this.handleSpellSel()}>
+                  <option value = {'None'}>Select Spell type</option>
+                  <option value = {'Blast'}>Blast</option>
+                  <option value = {'Explosion'}>Explosion</option>
+                  <option value = {'Beam'}>Beam</option>
+                  <option value = {'Melee Weapon'}>Melee Weapon</option>
+                  <option value = {'Ranged Weapon'}>Ranged Weapon</option>
+                </select>
+              </div>
+
+              <div className={'selectContainer ' + shouldShow.magicSel}>
                 <div>Select Magic</div>
                   <select id = 'selectMagic' onChange={()=>this.handleMagicSel()}>
                     <option value = 'None'>Select Magic</option>
                     {MAGIC.map(m => <option key = {m} value = {m}>{m}</option>)}
                   </select>
-                </div>
-                
-                <div className='selectContainer'>
-                  <div>Select Spell Type</div>
-                  <select id = 'selectSpell' onChange={()=>this.handleSpellSel()}>
-                    <option value = {'None'}>Select Spell type</option>
-                    <option value = {'Blast'}>Blast</option>
-                    <option value = {'Explosion'}>Explosion</option>
-                    <option value = {'Beam'}>Beam</option>
-                  </select>
-                </div>
+              </div>
 
                 <div className= {'selectContainer ' + shouldShow.selfSplaceSel}>
                   <div>Select Self/Place</div>
@@ -224,7 +264,7 @@ class LeftSide extends Component {
                   </select>
                 </div>
 
-                <div className='selectContainer'>
+                <div className={'selectContainer ' + shouldShow.weaponSel}>
                   <div>Select Weapon</div>
                   <select>
                     {sizeOptionTags}
@@ -232,15 +272,15 @@ class LeftSide extends Component {
                   <div>Is Strong?<input type="checkbox"/></div>
                 </div>
 
-                <div className='selectContainer'>
+                <div className={'selectContainer ' + shouldShow.attackSel}>
                   <div>Select Attack</div>
                   <select>
-                    <option>Arrow</option>
-                    <option>Smoke Arrow</option>
+                    <option>1</option>
+                    <option>2</option>
                   </select>
                 </div>
 
-                <div className='selectContainer'>
+                <div className={'selectContainer ' + shouldShow.arrowSel}>
                   <div>Select Arrow Type</div>
                   <select>
                     <option>Arrow</option>
@@ -255,10 +295,12 @@ class LeftSide extends Component {
                   </select>
                   <button>add status</button>
                 </div>
+
                 <br></br>
+
                 <div className='selectContainer'>
                   <div>The Following Status Are Selected:</div>
-                  <div className='statusContainer'>
+                <div className='statusContainer'>
 
                   </div>
                 </div>

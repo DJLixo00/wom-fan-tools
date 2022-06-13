@@ -7,7 +7,7 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
-    damageCalMode:false,
+    damageCalMode:true,
     leftBoxId:0,
     rightItemType:undefined,
     leftSideItems:[{},{},{},{},{},{}]

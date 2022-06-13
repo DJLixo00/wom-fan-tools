@@ -149,9 +149,10 @@
 }
 
 .damageBox, .rightRow{
-  height: 25vh;
+  height: 20vh;
   box-sizing: border-box;
   border: black 5px dotted;
+  overflow-y: auto;
 }
 
 .encSelected {
@@ -182,6 +183,24 @@
 
 .hideSel {
   display: none;
+}
+
+/* DamageBox */
+.dbName {
+  box-sizing: border-box;
+  border: #222222 solid 1px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dbName div{
+  text-align: center;
+  width: 80%;
+}
+
+
+.dbName button{
+  width: 20%;
 }
 
 /* Applying backgrounds to enchantment buttons*/
