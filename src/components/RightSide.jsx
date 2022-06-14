@@ -126,6 +126,7 @@ class RightSide extends Component {
             "strength":555,
             "spellName":"place holder spell name",
             "statusList":["list place holder","status2","status3"],
+            "impactPer":6,
             "impact":66666,
             "dotSum":999,
             "dotTick":9,

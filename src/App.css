@@ -198,20 +198,15 @@
   flex-wrap: wrap;
 }
 
-.statusBox {
-  display: flex;
-  flex-wrap: wrap;
+.statusBox, .statusBoxSelected {
   box-sizing: border-box;
   border: black 1px solid;
   width: 25%;
 }
 
-.statusBox button {
-  background-color: rgb(252, 102, 102);
-  border: #222222 1px solid;
-  border-radius: 50px;
+.statusBoxSelected {
+  background-color: #20b9ff;
 }
-
 /* DamageBox */
 .dbName {
   box-sizing: border-box;

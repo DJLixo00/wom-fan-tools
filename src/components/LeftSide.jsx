@@ -17,11 +17,13 @@ class LeftSide extends Component {
         pervBoxSel:0,
         selectedMagic:"Select Magic",
         spellType:0,
+        statusList:[],
     } 
 
     constructor(){
         super();
         this.assignClicked = this.assignClicked.bind(this)
+        this.handleStatusSel = this.handleStatusSel.bind(this)
     }
 
     addArrayHelper(arr1, arr2) {
@@ -122,6 +124,45 @@ class LeftSide extends Component {
       )
     }
 
+    handleStatusSel(status) {
+      /*
+       * Checks this.state.statusList for the status,
+       * If not found add status to the list
+       * If found splice status out of hte list 
+      */
+      let index = this.includesWithIndex(this.state.statusList, status)
+      let copiedList = []
+      this.state.statusList.forEach((function(v){
+        copiedList.push(v)
+      }))
+
+      if (index === -1) {
+        copiedList.push(status)
+      } else {
+          copiedList.splice(index,1)
+      }
+
+      this.setState({
+        statusList: copiedList
+      },
+        ()=>console.log(this.state.statusList)
+      )
+    }
+
+    includesWithIndex(array, elm) {
+      /*
+      * returns the index where the first elm is found in array
+      * returns -1 otherwise
+      */
+
+      for (let i = 0; i < array.length; i++) {
+        if (elm === array[i]) {
+          return i
+        }
+      }
+      return -1
+    }
+
     extractMagicName() {
       const magics = this.props.magicData.OBJ.magics
       let result = []
@@ -144,7 +185,8 @@ class LeftSide extends Component {
         sizeSel: "dontHideSel",
         attackSel: "dontHideSel",
         arrowSel:"dontHideSel",
-        weaponSel:"dontHideSel"
+        weaponSel:"dontHideSel",
+        ChargeSel:"dontHideSel"
       }
       switch (this.state.spellType) {
         case 1: //Blast
@@ -155,6 +197,7 @@ class LeftSide extends Component {
           shouldShow.magicSel = "dontHideSel"
           shouldShow.arrowSel = "hideSel"
           shouldShow.weaponSel = "hideSel"
+          shouldShow.ChargeSel = "dontHideSel"
         break;
         case 2: //Explosion
           shouldShow.selfSplaceSel = "dontHideSel"
@@ -164,6 +207,7 @@ class LeftSide extends Component {
           shouldShow.magicSel = "dontHideSel"
           shouldShow.arrowSel = "hideSel"
           shouldShow.weaponSel = "hideSel"
+          shouldShow.ChargeSel = "dontHideSel"
         break;
         case 3: //Beam
           shouldShow.selfSplaceSel = "hideSel"
@@ -173,6 +217,7 @@ class LeftSide extends Component {
           shouldShow.magicSel = "dontHideSel"
           shouldShow.arrowSel = "hideSel"
           shouldShow.weaponSel = "hideSel"
+          shouldShow.ChargeSel = "dontHideSel"
         break;
         case 4: //melee
           shouldShow.selfSplaceSel = "hideSel"
@@ -182,6 +227,7 @@ class LeftSide extends Component {
           shouldShow.magicSel = "hideSel"
           shouldShow.arrowSel = "hideSel"
           shouldShow.weaponSel = "dontHideSel"
+          shouldShow.ChargeSel = "hideSel"
         break;
         case 5: //bows
           shouldShow.selfSplaceSel = "hideSel"
@@ -191,6 +237,7 @@ class LeftSide extends Component {
           shouldShow.magicSel = "hideSel"
           shouldShow.arrowSel = "dontHideSel"
           shouldShow.weaponSel = "dontHideSel"
+          shouldShow.ChargeSel = "hideSel"
         break;
         default: //None
           shouldShow.selfSplaceSel = "hideSel"
@@ -200,6 +247,7 @@ class LeftSide extends Component {
           shouldShow.magicSel = "dontHideSel"
           shouldShow.arrowSel = "hideSel"
           shouldShow.weaponSel = "hideSel"
+          shouldShow.ChargeSel = "hideSel"
       }
 
       let sizeOptionTags = []
@@ -212,11 +260,17 @@ class LeftSide extends Component {
         AmountOptionTags.push(<option key = {`amount${i}`} value={i}>{i}x</option>)
       }
 
-      let statusOptionTags = []
+      let statusBoxTags = []
       for (let i=0; i < STATUS.length; i++) {
-        statusOptionTags.push(<option key = {`status${i}`} value={STATUS[i]}>{STATUS[i]}</option>)
+        statusBoxTags.push(<StatusBox 
+          key = {`status${i}`} 
+          status = {STATUS[i]}
+          text={STATUS[i]}
+          clicked = {this.handleStatusSel}
+          selected = {this.state.statusList.includes(STATUS[i])}
+          />)
       }
-      
+
       if (this.props.damageCalMode) {
         return(
           <div id="leftDiv" className="mainDiv">
@@ -291,23 +345,19 @@ class LeftSide extends Component {
                     <option>Smoke Arrow</option>
                   </select>
               </div>
+
+              <div className={'selectContainer ' + shouldShow.ChargeSel}>
+                  <div>Select Charge</div>
+                  <select>
+                    <option>No Charge</option>
+                    <option>Full Charge</option>
+                  </select>
+              </div>
                 
               <div className='selectContainer'>
-                  <div>Select Status Bonus</div>
-                  <select>
-                    {statusOptionTags}
-                  </select>
-                  <button>add status</button>
-              </div>
-
-              <br></br>
-
-              <div className='selectContainer'>
-                <div>The Following Status Are Selected:</div>
+                <div>Select Status</div>
                 <div className='statusContainer'>
-                  {/* start appending status components here */}
-                  <StatusBox text = "aaa" handleDelete={()=>console.log("1")}/>
-
+                  {statusBoxTags}
                 </div>
               </div>
 

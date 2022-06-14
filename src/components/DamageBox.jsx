@@ -33,6 +33,7 @@ class damageBox extends Component {
       </div>
       <br></br>
       <div className='dbSummary'>
+        <div>Impact Damage Per Hit: <span>{damage.impactPer}</span></div>
         <div>Total Impact Damage: <span>{damage.impact}</span></div>
         <div>Total Damage Over Time: 
           <span>{damage.dotSum}</span>

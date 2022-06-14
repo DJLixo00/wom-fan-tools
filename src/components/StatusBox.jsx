@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 
 class StatusBox extends Component {
     state = {  } 
+
     render() { 
         return (
-            <div className='statusBox'>
-                <button onClick={()=>this.props.handleDelete()}>X</button>
+            <div 
+                className = {this.props.selected ? 'statusBox statusBoxSelected': 'statusBox'}
+                onClick = {()=>{this.props.clicked(this.props.status)}}
+            >
                 <div>{this.props.text}</div>
             </div>
         );

@@ -296,7 +296,7 @@ const OBJ = {"magics": {
         "Bleeding", "Burning", "Scorched", "Melting", 
         "Corroding", "Poisoned", "Blinded", "Inky",
         "Sandy", "Snowy", "Frozen", "Petrified",
-        "Frozen", "Charred", "Soaked", "Drained"
+        "Freezing", "Charred", "Soaked", "Drained"
         ]
 }
 
