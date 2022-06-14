@@ -10,7 +10,6 @@ import iconMsp from "../images/others/iconMsp.png";
 import iconSze from "../images/others/iconSze.png";
 import iconKnb from "../images/others/iconKnb.png";
 
-
 class LeftSide extends Component {
     state = {  
         boxSelected:0,
@@ -222,7 +221,7 @@ class LeftSide extends Component {
           <div id="leftDiv" className="mainDiv">
             <div className='leftDamageContainer'>
 
-             <div className='selectContainer'>
+              <div className='selectContainer'>
                 <div>Select Spell Type</div>
                 <select id = 'selectSpell' onChange={()=>this.handleSpellSel()}>
                   <option value = {'None'}>Select Spell type</option>
@@ -242,132 +241,138 @@ class LeftSide extends Component {
                   </select>
               </div>
 
-                <div className= {'selectContainer ' + shouldShow.selfSplaceSel}>
+              <div className= {'selectContainer ' + shouldShow.selfSplaceSel}>
                   <div>Select Self/Place</div>
                   <select>
                     <option>Self</option>
                     <option>Placed</option>
                   </select>
-                </div>
+              </div>
 
-                <div className={'selectContainer '+ shouldShow.amountSel}>
+              <div className={'selectContainer '+ shouldShow.amountSel}>
                   <div>Select Amount</div>
                   <select>
                     {AmountOptionTags}
                   </select>
-                </div>
+              </div>
 
-                <div className={'selectContainer '+ shouldShow.sizeSel}>
+              <div className={'selectContainer '+ shouldShow.sizeSel}>
                   <div>Select Size</div>
                   <select>
                     {sizeOptionTags}
                   </select>
-                </div>
+              </div>
 
-                <div className={'selectContainer ' + shouldShow.weaponSel}>
+              <div className={'selectContainer ' + shouldShow.weaponSel}>
                   <div>Select Weapon</div>
                   <select>
                     {sizeOptionTags}
                   </select>
                   <div>Is Strong?<input type="checkbox"/></div>
-                </div>
+              </div>
 
-                <div className={'selectContainer ' + shouldShow.attackSel}>
+              <div className={'selectContainer ' + shouldShow.attackSel}>
                   <div>Select Attack</div>
                   <select>
                     <option>1</option>
                     <option>2</option>
                   </select>
-                </div>
+              </div>
 
-                <div className={'selectContainer ' + shouldShow.arrowSel}>
+              <div className={'selectContainer ' + shouldShow.arrowSel}>
                   <div>Select Arrow Type</div>
                   <select>
                     <option>Arrow</option>
                     <option>Smoke Arrow</option>
                   </select>
-                </div>
+              </div>
                 
-                <div className='selectContainer'>
+              <div className='selectContainer'>
                   <div>Select Status</div>
                   <select>
                     {statusOptionTags}
                   </select>
                   <button>add status</button>
-                </div>
+              </div>
 
-                <br></br>
+              <br></br>
 
-                <div className='selectContainer'>
-                  <div>The Following Status Are Selected:</div>
+              <div className='selectContainer'>
+                <div>The Following Status Are Selected:</div>
                 <div className='statusContainer'>
-
-                  </div>
+                  {/* start appending status components here */}
                 </div>
-
               </div>
+
+              <br></br>
+
+              <div className='selectContainer'>
+                <button>Calculate</button>
+              </div>
+
             </div>
-          )
-        } else {
-          return (
-            <div id="leftDiv" className="mainDiv">
-              <div className='leftRowContainer'>
-                <div className='leftRow'>
-                  <InventoryBox 
-                    boxId = {1} 
-                    clicked = {this.assignClicked} 
-                    boxSelected = {this.state.boxSelected} 
-                    type = "equip" 
-                    text = {equipped[1]["name"]}
-                  />
+          </div>
+        )
+      } else {
+        return (
+          <div id="leftDiv" className="mainDiv">
+            <div className='leftRowContainer'>
+              <div className='leftRow'>
+                <InventoryBox 
+                  boxId = {1} 
+                  clicked = {this.assignClicked} 
+                  boxSelected = {this.state.boxSelected} 
+                  type = "equip" 
+                  text = {equipped[1]["name"]}
+                />
   
-                  <InventoryBox 
-                    boxId = {2} 
-                    clicked = {this.assignClicked} 
-                    boxSelected = {this.state.boxSelected} 
-                    type = "equip"
-                    text = {equipped[2]["name"]}
-                  />
-                </div>
+                <InventoryBox 
+                  boxId = {2} 
+                  clicked = {this.assignClicked} 
+                  boxSelected = {this.state.boxSelected} 
+                  type = "equip"
+                  text = {equipped[2]["name"]}
+                />
+              </div>
+
+              <div className='leftRow'>
+                <InventoryBox 
+                  boxId = {3} 
+                  clicked = {this.assignClicked} 
+                  boxSelected = {this.state.boxSelected} 
+                  type = "equip"
+                  text = {equipped[3]["name"]}
+                />
   
-                <div className='leftRow'>
-                  <InventoryBox 
-                    boxId = {3} 
-                    clicked = {this.assignClicked} 
-                    boxSelected = {this.state.boxSelected} 
-                    type = "equip"
-                    text = {equipped[3]["name"]}
-                  />
+                <InventoryBox 
+                  boxId = {4} 
+                  clicked = {this.assignClicked} 
+                  boxSelected = {this.state.boxSelected} 
+                  type = "equip"
+                  text = {equipped[4]["name"]}
+                />
+              </div>
   
-                  <InventoryBox 
-                    boxId = {4} 
-                    clicked = {this.assignClicked} 
-                    boxSelected = {this.state.boxSelected} 
-                    type = "equip"
-                    text = {equipped[4]["name"]}
-                  />
-                </div>
-  
-                <div className='leftRow'>
-                  <InventoryBox 
-                    boxId = {5} 
-                    clicked = {this.assignClicked} 
-                    boxSelected = {this.state.boxSelected} 
-                    type = "equip"
-                    text = {equipped[5]["name"]}
-                  />
-                  <InventoryBox type = "invisible"/>
-  
-                </div>
-  
-                <div className='leftRow'>
-                  {this.calculateGearStats()}
-                </div>
+              <div className='leftRow'>
+                <InventoryBox 
+                  boxId = {5} 
+                  clicked = {this.assignClicked} 
+                  boxSelected = {this.state.boxSelected} 
+                  type = "equip"
+                  text = {equipped[5]["name"]}
+                />
+                <InventoryBox type = "invisible"/>
   
               </div>
+  
+              <div className='leftRow'>
+                {this.calculateGearStats()}
+              </div>
+
             </div>
-          );
-        }
+          </div>
+        );
+      }
 
         
     }

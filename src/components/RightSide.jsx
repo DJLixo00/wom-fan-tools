@@ -122,6 +122,8 @@ class RightSide extends Component {
         enchantButtonClassArr[this.state.enchantmentSelected] = "encSelected";
         
         let placeHolderDamageBoxOBj = {
+            "power":999,
+            "strength":555,
             "spellName":"place holder spell name",
             "statusList":["list place holder","status2","status3"],
             "impact":66666,

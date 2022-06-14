@@ -149,10 +149,17 @@
 }
 
 .damageBox, .rightRow{
-  height: 20vh;
+  height: 25vh;
   box-sizing: border-box;
-  border: black 5px dotted;
+  border: rgb(78, 78, 78) 2px solid;
   overflow-y: auto;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+
+  background-color: #222222;
 }
 
 .encSelected {
@@ -165,7 +172,7 @@
   text-align: center;
   box-sizing: border-box;
   background-color: #302c2c;
-  border: black 1px solid;
+  border: rgb(0, 0, 0) 1px solid;
   box-shadow: 0px 5px 5px #222222;
 }
 
@@ -193,14 +200,24 @@
   flex-wrap: wrap;
 }
 
-.dbName div{
+.dbName div {
   text-align: center;
   width: 80%;
 }
 
+.dbPowStrRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #222222;
+}
 
-.dbName button{
+.dbName button {
   width: 20%;
+}
+
+.dbSummary {
+  background-color: #302c2c;
 }
 
 /* Applying backgrounds to enchantment buttons*/

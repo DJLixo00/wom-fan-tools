@@ -254,7 +254,26 @@ const OBJ = {"magics": {
         },
     },
     },
-    "Weapons":{
+    "melee":{
+        "oldDagger":{
+            "name": "Old Dagger",
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "damage":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "damage":100000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "damage":9999999999999999999
+                }
+            }
+        }
+    },
+    "ranged":{
         "oldDagger":{
             "name": "Old Dagger",
             "attacks":{
