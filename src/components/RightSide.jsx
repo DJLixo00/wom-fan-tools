@@ -129,8 +129,8 @@ class RightSide extends Component {
             "impact":66666,
             "dotSum":999,
             "dotTick":9,
-            "bleedDot":-1, //how long does bleed last?
-            "limbLost":true
+            "dotStatus":"Bleeding",
+            "bleedDot":-1 //how long does bleed last?
         }
 
         if (this.props.selectionMode) {

@@ -34,10 +34,13 @@ class damageBox extends Component {
       <br></br>
       <div className='dbSummary'>
         <div>Total Impact Damage: <span>{damage.impact}</span></div>
-        <div>Total Damage Over Time: <span>{damage.dotSum}</span></div>
+        <div>Total Damage Over Time: 
+          <span>{damage.dotSum}</span>
+          {" "}
+          <span>({damage.dotStatus})</span>
+        </div>
         <div>DoT Per Tick: <span>{damage.dotTick}</span></div>
         <div>Total Damage: {damage.impact + damage.dotSum}</div>
-        <div>There is {damage.limbLost ? "a":"no"} chance for target to lose a limb.</div>
       </div>
 
     </div>);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InventoryBox from './InventoryBox';
+import StatusBox from './StatusBox';
 // import logo from "../logo.svg";
 import iconPow from "../images/others/iconPow.png";
 import iconDef from "../images/others/iconDef.png";
@@ -221,6 +222,10 @@ class LeftSide extends Component {
           <div id="leftDiv" className="mainDiv">
             <div className='leftDamageContainer'>
 
+              <div className='leftRow'>
+                {this.calculateGearStats()}
+              </div>
+
               <div className='selectContainer'>
                 <div>Select Spell Type</div>
                 <select id = 'selectSpell' onChange={()=>this.handleSpellSel()}>
@@ -288,7 +293,7 @@ class LeftSide extends Component {
               </div>
                 
               <div className='selectContainer'>
-                  <div>Select Status</div>
+                  <div>Select Status Bonus</div>
                   <select>
                     {statusOptionTags}
                   </select>
@@ -301,7 +306,14 @@ class LeftSide extends Component {
                 <div>The Following Status Are Selected:</div>
                 <div className='statusContainer'>
                   {/* start appending status components here */}
+                  <StatusBox text = "aaa" handleDelete={()=>console.log("1")}/>
+
                 </div>
+              </div>
+
+              <div className='selectContainer'>
+                <div>Note: </div>
+                <div>The damage over time from the status are not counted towards the total damage.</div>
               </div>
 
               <br></br>

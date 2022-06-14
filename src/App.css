@@ -67,6 +67,7 @@
   width: 50vh;
   height: 80vh;
   margin-left: auto;
+  overflow-y: auto;
 
   /* display: flex;
   flex-direction: column;
@@ -190,6 +191,25 @@
 
 .hideSel {
   display: none;
+}
+
+.statusContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.statusBox {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  border: black 1px solid;
+  width: 25%;
+}
+
+.statusBox button {
+  background-color: rgb(252, 102, 102);
+  border: #222222 1px solid;
+  border-radius: 50px;
 }
 
 /* DamageBox */
