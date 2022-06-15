@@ -16,7 +16,7 @@ class LeftSide extends Component {
         boxSelected:0,
         pervBoxSel:0,
         spellType:0,
-        weapon:"oldDagger",
+        weapon:"branchBow",
         statusList:[],
     } 
 
@@ -120,12 +120,17 @@ class LeftSide extends Component {
 
     handleSpellSel() {
       let valIndex = this.selectHelper("selectSpell")
-      this.setState({spellType:valIndex[1]})
+      this.setState({spellType:valIndex[1]},
+        //so when you select weapons types, 
+        //it automatically updates to the first in the weapon list
+        //draw back: will call setState twice and thus render like 2 or 4 times
+        ()=>{if (this.state.spellType > 3) {this.handleWeaponSel()}}
+      )
     }
 
     handleWeaponSel() {
       let valIndex = this.selectHelper("selectWeapon")
-      this.setState({weapon:valIndex[1]})
+      this.setState({weapon:valIndex[0]})
     }
 
     handleStatusSel(status) {
@@ -208,7 +213,7 @@ class LeftSide extends Component {
       let idArr = Object.keys(this.props.magicData.OBJ[wepType])
 
       let tags = []
-    
+      
       for (let i = 0; i < names.length; i++) {
         tags.push(<option key = {names[i]} value = {idArr[i]}>{names[i]}</option>)
       }
@@ -222,13 +227,18 @@ class LeftSide extends Component {
        */
       let wepType = "ranged"
       if (this.state.spellType === 4 ) { wepType = "melee"}
-      let weaponSkills = this.props.magicData.OBJ[wepType]//[wepId]//["attacks"]
-      console.log(weaponSkills)
-      // let tags = []
-      // for (let i = 0; i < weaponSkills.length; i++) {
-      //   tags.push(<option key = {names[i]} value = {idArr[i]}>{names[i]}</option>)
-      // }
-      return <p>hi</p>
+      let weapon = this.props.magicData.OBJ[wepType][wepId]
+      if (typeof weapon === 'undefined') { return <option value={undefined}>error</option>}
+      let weaponSkills = this.props.magicData.OBJ[wepType][wepId]["attacks"]
+
+      let tags = []
+      for (let skill in weaponSkills) {
+        let tagText = weaponSkills[skill]['name']
+        let tagKey = wepId + tagText
+        // console.log(tagValue)
+        tags.push(<option key = {tagKey} value = {skill}>{tagText}</option>)
+      }
+      return tags
     }
 
     extractObjProp(type) {
@@ -407,7 +417,7 @@ class LeftSide extends Component {
               <div className={'selectContainer ' + shouldShow.attackSel}>
                   <div>Select Attack</div>
                   <select id = 'selectAttack'>
-                    {this.attacksOptionTags()}
+                    {this.attacksOptionTags(this.state.weapon)}
                   </select>
               </div>
 
@@ -423,7 +433,7 @@ class LeftSide extends Component {
                   <div>Select Charge</div>
                   <select id = 'selectCharge'>
                     <option value={0}>No Charge</option>
-                    <option value={0}>Full Charge</option>
+                    <option value={100}>Full Charge</option>
                   </select>
               </div>
                 

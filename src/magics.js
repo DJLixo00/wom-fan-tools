@@ -481,8 +481,8 @@ const OBJ = {
                     "amount":1,
                     "damageMulPer":1000000000000000
                 },
-                "throw":{
-                    "name":"Throw",
+                "ragingStorm":{
+                    "name":"Raging Storm",
                     "amount":1,
                     "damageMulPer":1000000000000000
                 }
@@ -513,45 +513,35 @@ const OBJ = {
     "ranged":{
         "branchBow":{
             "name": "Branch Bow",
+            "baseDamage":35,
             "attacks":{
-                "light":{
-                    "name":"Slash",
-                    "damage":1000000000000000
+                "shoot":{
+                    "name":"shoot",
+                    "amount":1,
+                    "damageMulPer":100
                 },
-                "heavy":{
-                    "name":"Heavy Slash",
-                    "damage":100000000000000000
-                },
-                "throw":{
-                    "name":"Throw",
-                    "damage":9999999999999999999
-                }
             }
         },
         "cultureBow":{
             "name": "Culture Bow",
+            "baseDamage":35,
             "attacks":{
-                "light":{
-                    "name":"Slash",
-                    "damage":1000000000000000
-                },
-                "heavy":{
-                    "name":"Heavy Slash",
-                    "damage":100000000000000000
-                },
-                "throw":{
-                    "name":"Throw",
-                    "damage":9999999999999999999
+                "shoot":{
+                    "name":"shoot",
+                    "amount":1,
+                    "damageMulPer":100
                 }
             }
         },
         "crossBow":{
             "name": "Crossbow",
+            "baseDamage":35,
             "attacks":{
                 "shoot":{
-                    "name":"Shoot",
-                    "damage":1000000000000000
-                },
+                    "name":"shoot",
+                    "amount":1,
+                    "damageMulPer":100
+                }
             }
         }
     },
