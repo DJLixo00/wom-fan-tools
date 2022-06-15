@@ -69,7 +69,35 @@ const OBJ = {"equipment": {
             "level":[50,90],
             "stats":[0,0,0,15,0,0,0,0],
             "image":""
-        }
+        },
+        "warriorsCoat":{
+            "name":"Warrior's Coat",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,0,27,0],
+            "image":""
+        },
+        "exiledArmor":{
+            "name":"Exiled Armor",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,117,0,0,0,0,0,22],
+            "image":""
+        },
+        "minotaursArmor":{
+            "name":"Minotaur's Armor",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,0,29,22,0,0,0,0],
+            "image":""
+        },
+        "sunkenIronArmor":{
+            "name":"Sunken Iron Armor",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,62,0,0,0,0,13,0],
+            "image":""
+        },
     },
 
     "leggings":{
@@ -127,6 +155,34 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,0,13,0,0,0,0,0],
+            "image":""
+        },
+        "warriorsBoots":{
+            "name":"Warrior's Boots",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,0,13,0],
+            "image":""
+        },
+        "exiledLeggins":{
+            "name":"Exiled Leggings",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,58,0,0,0,0,0,11],
+            "image":""
+        },
+        "minotaursBoots":{
+            "name":"Minotaur's Boots",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,0,14,11,0,0,0,0],
+            "image":""
+        },
+        "sunkenIronBoots":{
+            "name":"Sunken Iron Boots",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,62,0,0,0,0,13,0],
             "image":""
         },
     },
@@ -349,6 +405,13 @@ const OBJ = {"equipment": {
             "stats":[0,0,0,6,0,0,0,0],
             "image":""
         },
+        "scaryHat":{
+            "name":"Scary Hat",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,6,0,0,0,0],
+            "image":""
+        },
         "strengthAmuletPoor":{
             "name":"Strength Amulet [Poor]",
             "rarity":"common",
@@ -370,7 +433,7 @@ const OBJ = {"equipment": {
             "stats":[0,0,0,0,12,0,0,0],
             "image":""
         },
-        "castingSpeedAmulePoor":{
+        "castingSpeedAmuletPoor":{
             "name":"Casting Speed Amulet [Poor]",
             "rarity":"common",
             "level":[0,50],
@@ -382,6 +445,153 @@ const OBJ = {"equipment": {
             "rarity":"common",
             "level":[50,90],
             "stats":[0,0,0,0,29,0,0,0],
+            "image":""
+        },
+        "crowWings":{
+            "name":"Crow Wings",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,22,0,0],
+            "image":""
+        },
+        "dualArmbands":{
+            "name":"Dual Armbands",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,22,0,0],
+            "image":""
+        },
+        "furHood":{
+            "name":"Fur Hood",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,22,0,0],
+            "image":""
+        },
+        "bandedTopHat":{
+            "name":"Banded Top Hat",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,15,0,0],
+            "image":""
+        },
+        "topHat":{
+            "name":"Top Hat",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,15,0,0],
+            "image":""
+        },
+        "corduroyHat":{
+            "name":"Corduroy Hat",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,15,0,0],
+            "image":""
+        },
+        "eyePatch":{
+            "name":"Eye Patch",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,15,0,0],
+            "image":""
+        },
+        "magicSpeedAmuletPoor":{
+            "name":"Magic Speed Amulet [Poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,15,0,0],
+            "image":""
+        },
+        "magicSpeedAmuletDull":{
+            "name":"Magic Speed Amulet [Dull]",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,29,0,0],
+            "image":""
+        },
+        "valkyrieHelm":{
+            "name":"Valkyrie Helm",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,0,22,0],
+            "image":""
+        },
+        "eyePoppers":{
+            "name":"Eye Poppers",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,0,8,0],
+            "image":""
+        },
+        "magicSizeAmuletPoor":{
+            "name":"Magic Size Amulet [Poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,0,15,0],
+            "image":""
+        },
+        "magicSizeAmuletDull":{
+            "name":"Magic Size Amulet [Dull]",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,0,29,0],
+            "image":""
+        },
+        "blindfold":{
+            "name":"blindfold",
+            "rarity":"common",
+            "level":[50,80],
+            "stats":[0,0,0,0,0,0,0,22],
+            "image":""
+        },
+        "glasses":{
+            "name":"Glasses",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,0,0,12],
+            "image":""
+        },
+        "scarf":{
+            "name":"Scarf",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,0,0,12],
+            "image":""
+        },
+        "knockbackAmuletPoor":{
+            "name":"Knockback Amulet [Poor]",
+            "rarity":"common",
+            "level":[0,50],
+            "stats":[0,0,0,0,0,0,0,15],
+            "image":""
+        },
+        "knockbackAmuletDull":{
+            "name":"Knockback Amulet [Dull]",
+            "rarity":"common",
+            "level":[50,90],
+            "stats":[0,0,0,0,0,0,0,29],
+            "image":""
+        },
+        "exiledHelmet":{
+            "name":"Exiled Helmet",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,58,0,0,0,0,0,11],
+            "image":""
+        },
+        "minotaursHat":{
+            "name":"Minotaur's Hat",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,0,14,11,0,0,0,0],
+            "image":""
+        },
+        "sunkenIronHelmet":{
+            "name":"Sunken Iron Helmet",
+            "rarity":"rare",
+            "level":[50,90],
+            "stats":[0,62,0,0,0,0,13,0],
             "image":""
         },
     },

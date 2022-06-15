@@ -1,4 +1,5 @@
-const OBJ = {"magics": {
+const OBJ = {
+    "magics": {
     "acid":{
         "damage":0.875,
         "percentDot": 0.05,
@@ -257,6 +258,238 @@ const OBJ = {"magics": {
     "melee":{
         "oldDagger":{
             "name": "Old Dagger",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "cultureDagger":{
+            "name": "cultureDagger",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },"cultureDualDagger":{
+            "name": "Dual Daggers",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "oldSpear":{
+            "name": "Old Spear",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "cultureSpear":{
+            "name": "Culture Spear",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "oldSword":{
+            "name": "Old Sword",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "cultureSword":{
+            "name": "Culture Sword",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "oldShortSword":{
+            "name": "Old Short Sword",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "axe":{
+            "name": "Vastira",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "oath":{
+            "name": "Oath Keeper",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+        "sunken":{
+            "name": "Sunken Sword",
+            "baseDamage":35,
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "amount":1,
+                    "damageMulPer":1000000000000000
+                }
+            }
+        },
+    },
+    "ranged":{
+        "branchBow":{
+            "name": "Branch Bow",
             "attacks":{
                 "light":{
                     "name":"Slash",
@@ -271,11 +504,26 @@ const OBJ = {"magics": {
                     "damage":9999999999999999999
                 }
             }
-        }
-    },
-    "ranged":{
-        "oldDagger":{
-            "name": "Old Dagger",
+        },
+        "cultureBow":{
+            "name": "culture Bow",
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "damage":1000000000000000
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "damage":100000000000000000
+                },
+                "throw":{
+                    "name":"Throw",
+                    "damage":9999999999999999999
+                }
+            }
+        },
+        "crossBow":{
+            "name": "crossBow",
             "attacks":{
                 "light":{
                     "name":"Slash",
@@ -297,7 +545,7 @@ const OBJ = {"magics": {
         "Corroding", "Poisoned", "Blinded", "Inky",
         "Sandy", "Snowy", "Frozen", "Petrified",
         "Freezing", "Charred", "Soaked", "Drained"
-        ]
+    ]
 }
 
 export default{OBJ}
