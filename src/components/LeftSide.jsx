@@ -15,7 +15,6 @@ class LeftSide extends Component {
     state = {  
         boxSelected:0,
         pervBoxSel:0,
-        selectedMagic:"Select Magic",
         spellType:0,
         statusList:[],
     } 
@@ -24,6 +23,8 @@ class LeftSide extends Component {
         super();
         this.assignClicked = this.assignClicked.bind(this)
         this.handleStatusSel = this.handleStatusSel.bind(this)
+        this.weaponOptionTags = this.weaponOptionTags.bind(this)
+        this.handleCalculate = this.handleCalculate.bind(this)
     }
 
     addArrayHelper(arr1, arr2) {
@@ -104,24 +105,19 @@ class LeftSide extends Component {
     }
 
     selectHelper(id) {
+      /**
+       * helper function for extracting value from <option>
+       * returns [selectedValue, indexOfSelectedValue].
+       * be sure there is at least 1 option tag or else it will throw error.
+       */
       let selOptions = document.getElementById(id).options
       let selIndex = selOptions.selectedIndex
       return [selOptions[selIndex].value, selIndex] 
     }
 
-    handleMagicSel() {
-      let valIndex = this.selectHelper("selectMagic")
-      this.setState({selectedMagic:valIndex[0]},
-        //call a function to communicate with Main here
-        // ()=>console.log(this.state.selectedMagic)
-      )
-    }
-
     handleSpellSel() {
       let valIndex = this.selectHelper("selectSpell")
-      this.setState({spellType:valIndex[1]},
-        //call a function to communicate with Main here
-      )
+      this.setState({spellType:valIndex[1]})
     }
 
     handleStatusSel(status) {
@@ -142,11 +138,37 @@ class LeftSide extends Component {
           copiedList.splice(index,1)
       }
 
-      this.setState({
-        statusList: copiedList
-      },
-        ()=>console.log(this.state.statusList)
-      )
+      this.setState({statusList: copiedList},)
+    }
+
+    handleCalculate() {
+      if (this.state.spellType === 0) {return}
+      
+      let magic = this.selectHelper("selectMagic")[0]
+      let selfPlaced = this.selectHelper("selectPlaced")[0]
+      let amount = this.selectHelper("selectAmount")[0]
+      let size = this.selectHelper("selectSize")[0]
+      let charge = this.selectHelper("selectCharge")[0]
+      
+      let weapon = this.selectHelper("selectWeapon")[0]
+      let attack = this.selectHelper("selectAttack")[0]
+      let arrow = this.selectHelper("selectArrow")[0]
+      let isStrong = document.getElementById("cbIsStrong").checked
+
+      let info = {
+        "status":this.state.statusList,
+        "spellType": this.state.spellType,
+        "selfPlaced":selfPlaced,
+        "magic":magic,
+        "amount":amount,
+        "size":size,
+        "charge":charge,
+        "weapon": weapon,
+        "attack":attack,
+        "arrow":arrow,
+        "isStrong":isStrong,
+      }
+      console.log(info)
     }
 
     includesWithIndex(array, elm) {
@@ -163,21 +185,39 @@ class LeftSide extends Component {
       return -1
     }
 
-    extractMagicName() {
-      const magics = this.props.magicData.OBJ.magics
+    weaponOptionTags(meleeArr, rangeArr) {
+      /**
+       * returns either jsx for meleeArr or rangeArr depending on 
+       * if the user chose melee or range
+       */
+      if (this.state.spellType === 4) {
+        return meleeArr.map(m => <option key = {m} value = {m}>{m}</option>)
+      } else {
+        return rangeArr.map(m => <option key = {m} value = {m}>{m}</option>)
+      }
+    }
+
+    extractObjName(type) {
+      /**
+       * gets the name property from magicData.js
+       */
+      const magics = this.props.magicData.OBJ[type]
       let result = []
       for (let m in magics) {
-        result.push(m.slice(0,1).toUpperCase() + m.slice(1,m.length))
+        result.push(magics[m]["name"])
       }
       return result
     }
 
     render() { 
       const STATUS = this.props.magicData.OBJ.status
-      const MAGIC = this.extractMagicName()
+      const MAGIC = this.extractObjName("magics")
+      const MELEE = this.extractObjName("melee")
+      const RANGED = this.extractObjName("ranged")
+
       let equipped = this.props.equipped
 
-      let blastAmount = [0,20,5,1][this.state.spellType]
+      let blastAmount = [1,20,5,1,1,1][this.state.spellType]
       let shouldShow = {
         magicSel: "dontHideSel",
         selfSplaceSel: "dontHideSel",
@@ -244,7 +284,7 @@ class LeftSide extends Component {
           shouldShow.amountSel = "hideSel"
           shouldShow.sizeSel = "hideSel"
           shouldShow.attackSel = "hideSel"
-          shouldShow.magicSel = "dontHideSel"
+          shouldShow.magicSel = "hideSel"
           shouldShow.arrowSel = "hideSel"
           shouldShow.weaponSel = "hideSel"
           shouldShow.ChargeSel = "hideSel"
@@ -294,15 +334,15 @@ class LeftSide extends Component {
 
               <div className={'selectContainer ' + shouldShow.magicSel}>
                 <div>Select Magic</div>
-                  <select id = 'selectMagic' onChange={()=>this.handleMagicSel()}>
-                    <option value = 'None'>Select Magic</option>
+                  <select id = 'selectMagic'>
+                    {/* <option value = 'None'>Select Magic</option> */}
                     {MAGIC.map(m => <option key = {m} value = {m}>{m}</option>)}
                   </select>
               </div>
 
               <div className= {'selectContainer ' + shouldShow.selfSplaceSel}>
                   <div>Select Self/Place</div>
-                  <select>
+                  <select id = 'selectPlaced'>
                     <option>Self</option>
                     <option>Placed</option>
                   </select>
@@ -310,47 +350,47 @@ class LeftSide extends Component {
 
               <div className={'selectContainer '+ shouldShow.amountSel}>
                   <div>Select Amount</div>
-                  <select>
+                  <select id = 'selectAmount'>
                     {AmountOptionTags}
                   </select>
               </div>
 
               <div className={'selectContainer '+ shouldShow.sizeSel}>
                   <div>Select Size</div>
-                  <select>
+                  <select id = 'selectSize'>
                     {sizeOptionTags}
                   </select>
               </div>
 
               <div className={'selectContainer ' + shouldShow.weaponSel}>
                   <div>Select Weapon</div>
-                  <select>
-                    {sizeOptionTags}
+                  <select id = 'selectWeapon'>
+                    {this.weaponOptionTags(MELEE, RANGED)}
                   </select>
-                  <div>Is Strong?<input type="checkbox"/></div>
+                  <div>Is Strong?<input type="checkbox" id="cbIsStrong"/></div>
               </div>
 
               <div className={'selectContainer ' + shouldShow.attackSel}>
                   <div>Select Attack</div>
-                  <select>
-                    <option>1</option>
-                    <option>2</option>
+                  <select id = 'selectAttack'>
+                    <option>example 1</option>
+                    <option>example 2</option>
                   </select>
               </div>
 
               <div className={'selectContainer ' + shouldShow.arrowSel}>
                   <div>Select Arrow Type</div>
-                  <select>
-                    <option>Arrow</option>
-                    <option>Smoke Arrow</option>
+                  <select id = 'selectArrow'>
+                    <option value="arrow">Arrow</option>
+                    <option value="smoke">Smoke Arrow</option>
                   </select>
               </div>
 
               <div className={'selectContainer ' + shouldShow.ChargeSel}>
                   <div>Select Charge</div>
-                  <select>
-                    <option>No Charge</option>
-                    <option>Full Charge</option>
+                  <select id = 'selectCharge'>
+                    <option value={0}>No Charge</option>
+                    <option value={0}>Full Charge</option>
                   </select>
               </div>
                 
@@ -369,7 +409,11 @@ class LeftSide extends Component {
               <br></br>
 
               <div className='selectContainer'>
-                <button>Calculate</button>
+                <button 
+                  onClick={()=>this.handleCalculate()} 
+                  disabled={this.state.spellType === 0}>
+                  Calculate
+                </button>
               </div>
 
             </div>

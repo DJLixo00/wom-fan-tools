@@ -201,11 +201,12 @@
 .statusBox, .statusBoxSelected {
   box-sizing: border-box;
   border: black 1px solid;
+  background-color: #222222;
   width: 25%;
 }
 
 .statusBoxSelected {
-  background-color: #20b9ff;
+  background-color: #5eccff;
 }
 /* DamageBox */
 .dbName {

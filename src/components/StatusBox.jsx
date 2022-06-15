@@ -5,12 +5,12 @@ class StatusBox extends Component {
 
     render() { 
         return (
-            <div 
+            <button 
                 className = {this.props.selected ? 'statusBox statusBoxSelected': 'statusBox'}
                 onClick = {()=>{this.props.clicked(this.props.status)}}
             >
                 <div>{this.props.text}</div>
-            </div>
+            </button>
         );
     }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import DamageBox from './DamageBox';
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
 
@@ -17,7 +16,11 @@ class MainBox extends Component {
     super();
     this.handleLeftIBClick = this.handleLeftIBClick.bind(this)
     this.handleRightIBClick = this.handleRightIBClick.bind(this)
+    this.handleLeftIBClick = this.handleLeftIBClick.bind(this)
+  }
 
+  handleLeftCalClick(obj) {
+    console.log(obj)
   }
 
   handleLeftIBClick(id, shouldChange) {
@@ -52,6 +55,7 @@ class MainBox extends Component {
 
         <LeftSide 
           mainHandler = {this.handleLeftIBClick} 
+          mainCalHandler = {this.handleLeftCalClick}
           equipped = {this.state.leftSideItems}
           damageCalMode = {this.state.damageCalMode}
           magicData = {this.props.magicData}

@@ -1,6 +1,7 @@
 const OBJ = {
     "magics": {
     "acid":{
+        "name":"Acid",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -13,6 +14,7 @@ const OBJ = {
     },
     //THIS JS IS INCOMPLETE! THE VALUES ARE MOST LIKELY INACCURATE!S
     "ash":{
+        "name":"Ash",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -24,6 +26,7 @@ const OBJ = {
         },
     },
     "crystal":{
+        "name":"Crystal",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -35,6 +38,7 @@ const OBJ = {
         },
     },
     "earth":{
+        "name":"Earth",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -46,6 +50,7 @@ const OBJ = {
         },
     },
     "explosion":{
+        "name":"Explosion",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -57,6 +62,7 @@ const OBJ = {
         },
     },
     "fire":{
+        "name":"Fire",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -68,6 +74,7 @@ const OBJ = {
         },
     },
     "glass":{
+        "name":"Glass",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -79,6 +86,7 @@ const OBJ = {
         },
     },
     "gold":{
+        "name":"Gold",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -90,6 +98,7 @@ const OBJ = {
         },
     },
     "ink":{
+        "name":"Ink",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -101,6 +110,7 @@ const OBJ = {
         },
     },
     "ice":{
+        "name":"Ice",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -112,6 +122,7 @@ const OBJ = {
         },
     },
     "light":{
+        "name":"Light",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -123,6 +134,7 @@ const OBJ = {
         },
     },
     "lightning":{
+        "name":"Lightning",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -134,6 +146,7 @@ const OBJ = {
         },
     },
     "magma":{
+        "name":"Magma",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -145,6 +158,7 @@ const OBJ = {
         },
     },
     "iron":{
+        "name":"Iron",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -156,6 +170,7 @@ const OBJ = {
         },
     },
     "paper":{
+        "name":"Paper",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -167,6 +182,7 @@ const OBJ = {
         },
     },
     "plasma":{
+        "name":"Plasma",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -178,6 +194,7 @@ const OBJ = {
         },
     },
     "poison":{
+        "name":"Poison",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -189,6 +206,7 @@ const OBJ = {
         },
     },
     "sand":{
+        "name":"Sand",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -200,6 +218,7 @@ const OBJ = {
         },
     },
     "shadow":{
+        "name":"Shadow",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -211,6 +230,7 @@ const OBJ = {
         },
     },
     "snow":{
+        "name":"Snow",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -222,6 +242,7 @@ const OBJ = {
         },
     },
     "water":{
+        "name":"Water",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -233,6 +254,7 @@ const OBJ = {
         },
     },
     "wind":{
+        "name":"Wind",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -244,6 +266,7 @@ const OBJ = {
         },
     },
     "wood":{
+        "name":"Wood",
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
@@ -278,7 +301,7 @@ const OBJ = {
             }
         },
         "cultureDagger":{
-            "name": "cultureDagger",
+            "name": "Culture Dagger",
             "baseDamage":35,
             "attacks":{
                 "light":{
@@ -506,7 +529,7 @@ const OBJ = {
             }
         },
         "cultureBow":{
-            "name": "culture Bow",
+            "name": "Culture Bow",
             "attacks":{
                 "light":{
                     "name":"Slash",
@@ -523,7 +546,7 @@ const OBJ = {
             }
         },
         "crossBow":{
-            "name": "crossBow",
+            "name": "Crossbow",
             "attacks":{
                 "light":{
                     "name":"Slash",

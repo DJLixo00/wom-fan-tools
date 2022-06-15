@@ -160,7 +160,7 @@ class RightSide extends Component {
                         delHandler = {(id)=>console.log(id)}
                     />
                     {/* this should be a button to add DamageBox */}
-                    <div className='rightRow'>{"text"}</div>
+                    <div className='rightRow'>{"click here to switch between inventory and calculation"}</div>
                 </div>
             )
         }
