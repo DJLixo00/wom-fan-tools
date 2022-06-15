@@ -16,6 +16,7 @@ class LeftSide extends Component {
         boxSelected:0,
         pervBoxSel:0,
         spellType:0,
+        weapon:"oldDagger",
         statusList:[],
     } 
 
@@ -23,7 +24,9 @@ class LeftSide extends Component {
         super();
         this.assignClicked = this.assignClicked.bind(this)
         this.handleStatusSel = this.handleStatusSel.bind(this)
+        this.handleWeaponSel = this.handleWeaponSel.bind(this)
         this.weaponOptionTags = this.weaponOptionTags.bind(this)
+        this.attacksOptionTags = this.attacksOptionTags.bind(this)
         this.handleCalculate = this.handleCalculate.bind(this)
     }
 
@@ -120,6 +123,11 @@ class LeftSide extends Component {
       this.setState({spellType:valIndex[1]})
     }
 
+    handleWeaponSel() {
+      let valIndex = this.selectHelper("selectWeapon")
+      this.setState({weapon:valIndex[1]})
+    }
+
     handleStatusSel(status) {
       /*
        * Checks this.state.statusList for the status,
@@ -150,7 +158,7 @@ class LeftSide extends Component {
       let size = this.selectHelper("selectSize")[0]
       let charge = this.selectHelper("selectCharge")[0]
       
-      let weapon = this.selectHelper("selectWeapon")[0]
+      let weapon = this.state.weapon
       let attack = this.selectHelper("selectAttack")[0]
       let arrow = this.selectHelper("selectArrow")[0]
       let isStrong = document.getElementById("cbIsStrong").checked
@@ -185,36 +193,62 @@ class LeftSide extends Component {
       return -1
     }
 
-    weaponOptionTags(meleeArr, rangeArr) {
+    weaponOptionTags() {
       /**
        * returns either jsx for meleeArr or rangeArr depending on 
        * if the user chose melee or range
+       * 
+       * note: "range" and "melee" are hard coded, so if the .js does not
+       * have those properties, it will break
        */
-      if (this.state.spellType === 4) {
-        return meleeArr.map(m => <option key = {m} value = {m}>{m}</option>)
-      } else {
-        return rangeArr.map(m => <option key = {m} value = {m}>{m}</option>)
+      let wepType = "ranged"
+      if (this.state.spellType === 4 ) { wepType = "melee"}
+      let objArr = this.extractObjProp(wepType)
+      let names = objArr.map(v => v.name)
+      let idArr = Object.keys(this.props.magicData.OBJ[wepType])
+
+      let tags = []
+    
+      for (let i = 0; i < names.length; i++) {
+        tags.push(<option key = {names[i]} value = {idArr[i]}>{names[i]}</option>)
       }
+      return tags
     }
 
-    extractObjName(type) {
+    attacksOptionTags(wepId) {
+      /**
+       * gets the abilities of a weapon and put them in tags
+       * "range" "attacks" "melee" hard coded
+       */
+      let wepType = "ranged"
+      if (this.state.spellType === 4 ) { wepType = "melee"}
+      let weaponSkills = this.props.magicData.OBJ[wepType]//[wepId]//["attacks"]
+      console.log(weaponSkills)
+      // let tags = []
+      // for (let i = 0; i < weaponSkills.length; i++) {
+      //   tags.push(<option key = {names[i]} value = {idArr[i]}>{names[i]}</option>)
+      // }
+      return <p>hi</p>
+    }
+
+    extractObjProp(type) {
       /**
        * gets the name property from magicData.js
        */
       const magics = this.props.magicData.OBJ[type]
       let result = []
       for (let m in magics) {
-        result.push(magics[m]["name"])
+        result.push(magics[m])
       }
       return result
     }
 
     render() { 
       const STATUS = this.props.magicData.OBJ.status
-      const MAGIC = this.extractObjName("magics")
-      const MELEE = this.extractObjName("melee")
-      const RANGED = this.extractObjName("ranged")
-
+      const MAGIC = this.extractObjProp("magics").map(v => v["name"])
+      // const MELEE = MELEE_ID.map(v => v["name"])
+      // const RANGED = RANGED_ID.map(v => v["name"])
+      
       let equipped = this.props.equipped
 
       let blastAmount = [1,20,5,1,1,1][this.state.spellType]
@@ -364,8 +398,8 @@ class LeftSide extends Component {
 
               <div className={'selectContainer ' + shouldShow.weaponSel}>
                   <div>Select Weapon</div>
-                  <select id = 'selectWeapon'>
-                    {this.weaponOptionTags(MELEE, RANGED)}
+                  <select id = 'selectWeapon' onChange={()=>this.handleWeaponSel()}>
+                    {this.weaponOptionTags()}
                   </select>
                   <div>Is Strong?<input type="checkbox" id="cbIsStrong"/></div>
               </div>
@@ -373,8 +407,7 @@ class LeftSide extends Component {
               <div className={'selectContainer ' + shouldShow.attackSel}>
                   <div>Select Attack</div>
                   <select id = 'selectAttack'>
-                    <option>example 1</option>
-                    <option>example 2</option>
+                    {this.attacksOptionTags()}
                   </select>
               </div>
 
