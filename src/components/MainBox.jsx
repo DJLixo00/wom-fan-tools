@@ -6,7 +6,7 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
-    damageCalMode:true,
+    damageCalMode:false,
     leftBoxId:0,
     rightItemType:undefined,
     leftSideItems:[{},{},{},{},{},{}]
@@ -16,7 +16,70 @@ class MainBox extends Component {
     super();
     this.handleLeftIBClick = this.handleLeftIBClick.bind(this)
     this.handleRightIBClick = this.handleRightIBClick.bind(this)
-    this.handleLeftIBClick = this.handleLeftIBClick.bind(this)
+    this.handleLeftCalClick = this.handleLeftCalClick.bind(this)
+    this.calculateDamage = this.calculateDamage.bind(this)
+    this.calculateGearStats = this.calculateGearStats.bind(this)
+  }
+
+  addArrayHelper(arr1, arr2) {
+    /**
+     * Helper function that returns the sum of two arrays like so:
+     *  let a = [1,2]
+     *  let b = [3,4]
+     *  addArrayHelper(a,b) would return [4,6]
+     *  a and b must be the same length
+    */
+    if (arr1.length !== arr2.length) {
+      console.error("arr1 arr2 length mismatch, check your input to addArrayHelper")
+    }
+
+    let result = []
+    for (let i = 0; i < arr1.length; i++) {
+      result.push(arr1[i] + arr2[i])
+    }
+    return result
+  }
+
+  calculateGearStats(){
+    /**
+     * returns array of the stats of the item equipped.
+     * loop starts at 1 because 0 means not in selection Mode
+     */
+
+    let result = [0,0,0,0,0,0,0,0]
+    for (let i = 1; i < this.state.leftSideItems.length; i++) {
+      let slot = this.state.leftSideItems[i]["stats"]
+      if (typeof slot === 'undefined') {
+        continue;
+      } 
+      let arr1 = this.state.leftSideItems[i]["stats"]
+      let arr2 = result
+      result = this.addArrayHelper(arr1,arr2)
+    }
+    return result  
+  }
+
+  calculateDamage(obj){
+    /**
+     * Takes in the obj from headleLeftCalClick to calcualte damage.
+     * returns 
+     * {
+     * 
+     * 
+     * }
+     */
+    let perImp = 0
+    let totImp = 0
+    let perDot = 0
+    let totDot = 0
+    let dotType = "N/A"
+
+    // we get 19 from the formula
+    // player level is set to max level (90)
+    const MAGIC_NUM = 19
+    const LV = 90
+    
+    let power
   }
 
   handleLeftCalClick(obj) {
@@ -46,7 +109,7 @@ class MainBox extends Component {
   }
 
   render() {
-    // console.log(this.props.magicData) 
+    let gearStats = this.calculateGearStats()
     return(
       <div className="mainBox">
         <div id="topDiv" className="mainDiv">
@@ -57,6 +120,7 @@ class MainBox extends Component {
           mainHandler = {this.handleLeftIBClick} 
           mainCalHandler = {this.handleLeftCalClick}
           equipped = {this.state.leftSideItems}
+          stats = {gearStats}
           damageCalMode = {this.state.damageCalMode}
           magicData = {this.props.magicData}
         />
