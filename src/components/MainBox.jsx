@@ -100,49 +100,59 @@ class MainBox extends Component {
     let wepMagObj = obj["wepMagObj"]
 
     let magic = wepMagObj["damage"]
-    let charge = parseInt(obj["charge"])
+    let chargePercent = parseInt(obj["charge"])
     let size = obj["size"]
     let interactions = 1
-    let amountMultiplier = 1
-    let amount = obj["amount"]
+    let amount = parseInt(obj["amount"])
 
     let spellType = obj["spellType"]
     let spellTypeName = ["","Blast","Explosion","Beam"][obj["spellType"]]
     
-    //name    
     let chargeName = ''
-    if (charge === 0) {
-      chargeName = 'No Charge'
-    } else if (charge === 100) {
-      chargeName = 'Fully Charged'
+    let selfPlaced = obj["selfPlaced"]
+    let explosionType = obj["expType"]
+ 
+    let chargeMod = 1
+    if (chargePercent === 0) {
+      chargeName = ''
+    } else if (chargePercent === 100) {
+      chargeName = 'Fully Charged '
+      chargeMod = 4/3
     } else {
-      chargeName = `${charge}% Charged`
+      chargeName = `${chargePercent}% Charged `
     }
-    let explosionTypeName = ""
-    let nameSelfPlaced = ""
-    if (spellType === 2) {
-      nameSelfPlaced = " " + obj["selfPlaced"] + " "
-      explosionTypeName = obj["expType"] + " "
+    let spellName = `${chargeName}${wepMagObj["name"]}`
+    let baseDamage = MAGIC_NUM + LV + power 
+    let damageMod = magic * chargeMod * interactions
+    let sizeMod = 1.3 - 0.3 * (size)
+    let amountMod = 1
+    let expPlacedMod = 1
+    let expShapeMod = 1
+    let impactPer = 0
+
+    if (spellType === 1) { 
+      //blast
+      amountMod = 10 / (amount + 9)
+      spellName += ` ${amount}x ${size}%`
+    } else if (spellType === 2) { 
+      //explosion
+      
+      if (selfPlaced === "Placed") {expPlacedMod = 0.6}
+      if (explosionType === "Pillar") {expShapeMod = 1.2}
+
+      amountMod = 2 / (amount + 1)
+      sizeMod = 1.4 - 0.4 * (size)
+      spellName += ` ${amount}x ${selfPlaced} ${size}% ${explosionType}`
+    } else { 
+      //beam
+      baseDamage = 0.5 * (MAGIC_NUM + LV) + 0.7 * power
+      spellName += ` ${size}%`
     }
-    let spellName = `${chargeName} ${wepMagObj["name"]}`
-    if (spellType === 1) { //blast
-      spellName += ` ${amount}x`
-      spellName += ` ${size}%`
-    } else if (spellType === 2) { //explosion
-      spellName += ` ${amount}x`
-      spellName += ` ${nameSelfPlaced}`
-      spellName += ` ${size}%`
-      spellName += ` ${explosionTypeName}`
-    } else { //beam
-      spellName += ` ${size}%`
-    }
+
+    impactPer = baseDamage * damageMod * amountMod * expPlacedMod * expShapeMod
     spellName += ` ${spellTypeName}`
-    //end name
 
-    //damage
-    let damage = (MAGIC_NUM + LV + power) * magic * charge * interactions * amountMultiplier
-
-    return spellName
+    return spellName + "\n" + impactPer + "\n" + baseDamage + "\n" + damageMod
   }
 
   calMeleeDmg() {
@@ -155,6 +165,7 @@ class MainBox extends Component {
 
   handleLeftCalClick(obj) {
     console.log(obj)
+    console.log(this.calMagicDmg(obj, 0))
   }
 
   handleLeftIBClick(id, shouldChange) {

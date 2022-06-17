@@ -15,7 +15,7 @@ const OBJ = {
     //THIS JS IS INCOMPLETE! THE VALUES ARE MOST LIKELY INACCURATE!S
     "ash":{
         "name":"Ash",
-        "damage":0.875,
+        "damage":0.85,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -27,7 +27,7 @@ const OBJ = {
     },
     "crystal":{
         "name":"Crystal",
-        "damage":0.875,
+        "damage":0.975,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -39,7 +39,7 @@ const OBJ = {
     },
     "earth":{
         "name":"Earth",
-        "damage":0.875,
+        "damage":1,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -51,7 +51,7 @@ const OBJ = {
     },
     "explosion":{
         "name":"Explosion",
-        "damage":0.875,
+        "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -63,7 +63,7 @@ const OBJ = {
     },
     "fire":{
         "name":"Fire",
-        "damage":0.875,
+        "damage":0.825,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -87,7 +87,7 @@ const OBJ = {
     },
     "gold":{
         "name":"Gold",
-        "damage":0.875,
+        "damage":1.2,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -99,7 +99,7 @@ const OBJ = {
     },
     "ink":{
         "name":"Ink",
-        "damage":0.875,
+        "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -111,7 +111,7 @@ const OBJ = {
     },
     "ice":{
         "name":"Ice",
-        "damage":0.875,
+        "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -123,7 +123,7 @@ const OBJ = {
     },
     "light":{
         "name":"Light",
-        "damage":0.875,
+        "damage":0.825,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -135,7 +135,7 @@ const OBJ = {
     },
     "lightning":{
         "name":"Lightning",
-        "damage":0.875,
+        "damage":0.85,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -147,7 +147,7 @@ const OBJ = {
     },
     "magma":{
         "name":"Magma",
-        "damage":0.875,
+        "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -159,7 +159,7 @@ const OBJ = {
     },
     "iron":{
         "name":"Iron",
-        "damage":0.875,
+        "damage":1.1,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -171,7 +171,7 @@ const OBJ = {
     },
     "paper":{
         "name":"Paper",
-        "damage":0.875,
+        "damage":0.85,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -183,7 +183,7 @@ const OBJ = {
     },
     "plasma":{
         "name":"Plasma",
-        "damage":0.875,
+        "damage":0.775,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -195,7 +195,7 @@ const OBJ = {
     },
     "poison":{
         "name":"Poison",
-        "damage":0.875,
+        "damage":0.75,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -207,7 +207,7 @@ const OBJ = {
     },
     "sand":{
         "name":"Sand",
-        "damage":0.875,
+        "damage":0.975,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -219,7 +219,7 @@ const OBJ = {
     },
     "shadow":{
         "name":"Shadow",
-        "damage":0.875,
+        "damage":0.950,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -231,7 +231,7 @@ const OBJ = {
     },
     "snow":{
         "name":"Snow",
-        "damage":0.875,
+        "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -243,7 +243,7 @@ const OBJ = {
     },
     "water":{
         "name":"Water",
-        "damage":0.875,
+        "damage":0.950,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -255,7 +255,7 @@ const OBJ = {
     },
     "wind":{
         "name":"Wind",
-        "damage":0.875,
+        "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -267,7 +267,7 @@ const OBJ = {
     },
     "wood":{
         "name":"Wood",
-        "damage":0.875,
+        "damage":0.950,
         "percentDot": 0.05,
         "dotTicks":10,
         "dotThreshold":0,
@@ -281,7 +281,7 @@ const OBJ = {
     "melee":{
         "oldDagger":{
             "name": "Old Dagger",
-            "baseDamage":35,
+            "baseDamage":26,
             "attacks":{
                 "light":{
                     "name":"Slash",
@@ -427,7 +427,7 @@ const OBJ = {
         },
         "oldShortSword":{
             "name": "Old Short Sword",
-            "baseDamage":35,
+            "baseDamage":34,
             "attacks":{
                 "light":{
                     "name":"Slash",
@@ -448,7 +448,7 @@ const OBJ = {
         },
         "axe":{
             "name": "Vastira",
-            "baseDamage":35,
+            "baseDamage":43,
             "attacks":{
                 "light":{
                     "name":"Slash",
@@ -490,7 +490,7 @@ const OBJ = {
         },
         "sunken":{
             "name": "Sunken Sword",
-            "baseDamage":35,
+            "baseDamage":40,
             "attacks":{
                 "light":{
                     "name":"Slash",
