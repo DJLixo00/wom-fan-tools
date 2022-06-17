@@ -116,14 +116,14 @@ const OBJ = {"equipment": {
             "image":""
         },
         "LeatherPantsD":{
-            "name":"Dark Leather Hat",
+            "name":"Dark Leather Pants",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,31,0,0,0,0,0,0],
             "image":""
         },
         "LeatherPantsL":{
-            "name":"Light Leather Hat",
+            "name":"Light Leather Pants",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,31,0,0,0,0,0,0],

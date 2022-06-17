@@ -31,26 +31,6 @@ class LeftSide extends Component {
         this.handleCalculate = this.handleCalculate.bind(this)
     }
 
-    // calculateGearStats(){
-    //   /**
-    //    * returns JSX that displays the stats of the item equipped.
-    //    * loop starts at 1 because 0 means not in selection Mode
-    //    */
-
-    //   let result = [0,0,0,0,0,0,0,0]
-    //   for (let i = 1; i < this.props.equipped.length; i++) {
-    //     let slot = this.props.equipped[i]["stats"]
-    //     if (typeof slot === 'undefined') {
-    //       continue;
-    //     } 
-    //     let arr1 = this.props.equipped[i]["stats"]
-    //     let arr2 = result
-    //     result = this.addArrayHelper(arr1,arr2)
-    //   }
-      
-    //   // this.setState({gearStats:result})
-    // }
-    
     statsDisplayTags () {
       let result = this.props.stats
       return(
@@ -149,24 +129,39 @@ class LeftSide extends Component {
       let amount = this.selectHelper("selectAmount")[0]
       let size = this.selectHelper("selectSize")[0]
       let charge = this.selectHelper("selectCharge")[0]
-      
+      let expType = this.selectHelper("selectExpType")[0]
+
       let weapon = this.state.weapon
       let attack = this.selectHelper("selectAttack")[0]
       let arrow = this.selectHelper("selectArrow")[0]
       let isStrong = document.getElementById("cbIsStrong").checked
+      
+      let obj = {}
+      if (this.state.spellType <= 3) {
+        //magics
+        obj = this.extractObj(magic.toLowerCase(), "magics")
+      } else if (this.state.spellType === 4 )  {
+        //melee
+        obj = this.extractObj(this.state.weapon, "melee")
+      }else if (this.state.spellType === 5 )  {
+        //ranged
+        obj = this.extractObj(this.state.weapon, "range")
+      }
 
       let info = {
-        "status":this.state.statusList,
-        "spellType": this.state.spellType,
-        "selfPlaced":selfPlaced,
-        "magic":magic,
-        "amount":amount,
-        "size":size,
-        "charge":charge,
-        "weapon": weapon,
-        "attack":attack,
-        "arrow":arrow,
-        "isStrong":isStrong,
+        status:this.state.statusList,
+        spellType: this.state.spellType,
+        selfPlaced:selfPlaced,
+        expType:expType,
+        magic:magic,
+        amount:amount,
+        size:size,
+        charge:charge,
+        weapon: weapon,
+        attack:attack,
+        arrow:arrow,
+        isStrong:isStrong,
+        wepMagObj:obj
       }
       
       this.props.mainCalHandler(info)
@@ -229,9 +224,22 @@ class LeftSide extends Component {
       return tags
     }
 
+    extractObj(id,type) {
+      /**
+       * returns the object from id.
+       * so if extractObj(acid,magic) it will return the acid magic obj 
+       * will return undefined if not found
+       */
+      const typeObj = this.props.magicData.OBJ[type]
+      if (typeof typeObj === 'object') {
+        return typeObj[id]
+      }
+      return undefined
+    }
+
     extractObjProp(type) {
       /**
-       * gets the name property from magicData.js
+       * gets all of the name property from magicData.js and put in array form
        */
       const magics = this.props.magicData.OBJ[type]
       let result = []
@@ -375,8 +383,17 @@ class LeftSide extends Component {
               <div className= {'selectContainer ' + shouldShow.selfSplaceSel}>
                   <div>Select Self/Place</div>
                   <select id = 'selectPlaced'>
-                    <option>Self</option>
-                    <option>Placed</option>
+                    <option value = "Self">Self</option>
+                    <option value = "Placed">Placed</option>
+                  </select>
+              </div>
+
+              <div className= {'selectContainer ' + shouldShow.selfSplaceSel}>
+                  <div>Select Explosion Type</div>
+                  <select id = 'selectExpType'>
+                    <option value = "Sphere">Sphere</option>
+                    <option value = "Shockwave">Shockwave</option>
+                    <option value = "Pillar">Pillar</option>
                   </select>
               </div>
 
@@ -437,7 +454,7 @@ class LeftSide extends Component {
                 <div>The damage over time from the status are not counted towards the total damage.</div>
               </div>
 
-              <br></br>
+              {/* <br></br> */}
 
               <div className='selectContainer'>
                 <button 

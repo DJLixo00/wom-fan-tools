@@ -286,7 +286,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -307,7 +307,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -327,7 +327,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -348,7 +348,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -369,7 +369,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -390,7 +390,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -411,7 +411,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -432,12 +432,12 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "throw":{
                     "name":"Throw",
@@ -453,7 +453,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -474,7 +474,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
@@ -495,7 +495,7 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damageMulPer":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",

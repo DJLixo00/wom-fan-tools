@@ -6,7 +6,7 @@ import RightSide from './RightSide';
 class MainBox extends Component {
   state = {  
     selectionMode:false,
-    damageCalMode:false,
+    damageCalMode:true,
     leftBoxId:0,
     rightItemType:undefined,
     leftSideItems:[{},{},{},{},{},{}]
@@ -68,18 +68,89 @@ class MainBox extends Component {
      * 
      * }
      */
+
+    //get the newest the gear stats
+    let gearStats = this.calculateGearStats()
+
     let perImp = 0
     let totImp = 0
     let perDot = 0
     let totDot = 0
     let dotType = "N/A"
+    
+    let spellType = obj["spellType"]
 
-    // we get 19 from the formula
-    // player level is set to max level (90)
+    let strength = gearStats[3]
+    let power = gearStats[0]
+    
+    if (spellType === 4) {
+      this.calMeleeDmg()
+    } else if (spellType === 5) {
+      this.calBowDmg()
+    } else {
+      this.calMagicDmg()
+    }
+
+  }
+
+  calMagicDmg(obj, power) {
     const MAGIC_NUM = 19
     const LV = 90
+
+    let wepMagObj = obj["wepMagObj"]
+
+    let magic = wepMagObj["damage"]
+    let charge = parseInt(obj["charge"])
+    let size = obj["size"]
+    let interactions = 1
+    let amountMultiplier = 1
+    let amount = obj["amount"]
+
+    let spellType = obj["spellType"]
+    let spellTypeName = ["","Blast","Explosion","Beam"][obj["spellType"]]
     
-    let power
+    //name    
+    let chargeName = ''
+    if (charge === 0) {
+      chargeName = 'No Charge'
+    } else if (charge === 100) {
+      chargeName = 'Fully Charged'
+    } else {
+      chargeName = `${charge}% Charged`
+    }
+    let explosionTypeName = ""
+    let nameSelfPlaced = ""
+    if (spellType === 2) {
+      nameSelfPlaced = " " + obj["selfPlaced"] + " "
+      explosionTypeName = obj["expType"] + " "
+    }
+    let spellName = `${chargeName} ${wepMagObj["name"]}`
+    if (spellType === 1) { //blast
+      spellName += ` ${amount}x`
+      spellName += ` ${size}%`
+    } else if (spellType === 2) { //explosion
+      spellName += ` ${amount}x`
+      spellName += ` ${nameSelfPlaced}`
+      spellName += ` ${size}%`
+      spellName += ` ${explosionTypeName}`
+    } else { //beam
+      spellName += ` ${size}%`
+    }
+    spellName += ` ${spellTypeName}`
+    //end name
+
+    //damage
+    let damage = (MAGIC_NUM + LV + power) * magic * charge * interactions * amountMultiplier
+
+    return spellName
+  }
+
+  calMeleeDmg() {
+
+  }
+
+  calBowDmg() {
+
   }
 
   handleLeftCalClick(obj) {
