@@ -9,7 +9,8 @@ class MainBox extends Component {
     damageCalMode:true,
     leftBoxId:0,
     rightItemType:undefined,
-    leftSideItems:[{},{},{},{},{},{}]
+    leftSideItems:[{},{},{},{},{},{}],
+    rightSideDamageArr: []
   } 
 
   constructor(){
@@ -19,6 +20,7 @@ class MainBox extends Component {
     this.handleLeftCalClick = this.handleLeftCalClick.bind(this)
     this.calculateDamage = this.calculateDamage.bind(this)
     this.calculateGearStats = this.calculateGearStats.bind(this)
+    this.handleRightModeClick = this.handleRightModeClick.bind(this)
   }
 
   addArrayHelper(arr1, arr2) {
@@ -62,38 +64,42 @@ class MainBox extends Component {
   calculateDamage(obj){
     /**
      * Takes in the obj from headleLeftCalClick to calcualte damage.
-     * returns 
-     * {
-     * 
-     * 
-     * }
+      [spellName, impactPer, totalImpact, dotTick, totalImpact, power, strenght, dotType]
+      returns nothing
      */
 
     //get the newest the gear stats
     let gearStats = this.calculateGearStats()
 
-    let perImp = 0
-    let totImp = 0
-    let perDot = 0
-    let totDot = 0
     let dotType = "N/A"
-    
     let spellType = obj["spellType"]
-
     let strength = gearStats[3]
     let power = gearStats[0]
-    
+    let resultArr = ["",0,0,0,0]
+
     if (spellType === 4) {
-      this.calMeleeDmg()
+      return this.calMeleeDmg()
     } else if (spellType === 5) {
-      this.calBowDmg()
+      return this.calBowDmg()
     } else {
-      this.calMagicDmg()
+      resultArr = this.calMagicDmg(obj, power)
+      // return this.calMagicDmg(obj, power) this.state.rightSideDamageArr.splice(0, 0, entry)
     }
+    resultArr.push(power)
+    resultArr.push(strength)
+    resultArr.push(dotType)
+    this.state.rightSideDamageArr.splice(0, 0, resultArr)
+    this.setState({
+      rightSideDamageArr: this.state.rightSideDamageArr
+    })
 
   }
 
   calMagicDmg(obj, power) {
+    /**
+     * calculate magic impact and dot, 
+     * returns [spellName, impactPer, totalImpact, dotTick, totalImpact]
+     */
     const MAGIC_NUM = 19
     const LV = 90
 
@@ -124,11 +130,18 @@ class MainBox extends Component {
     let spellName = `${chargeName}${wepMagObj["name"]}`
     let baseDamage = MAGIC_NUM + LV + power 
     let damageMod = magic * chargeMod * interactions
-    let sizeMod = 1.3 - 0.3 * (size)
+    let sizeMod = 1.3 - 0.3 * (size/100)
     let amountMod = 1
     let expPlacedMod = 1
     let expShapeMod = 1
+
     let impactPer = 0
+    let totalImpact = 0
+
+    let dotPercent = wepMagObj["percentDot"]
+    let dotDuration = wepMagObj["dotTicks"]
+    let dotTick = 0
+    let totalDot = 0
 
     if (spellType === 1) { 
       //blast
@@ -141,7 +154,7 @@ class MainBox extends Component {
       if (explosionType === "Pillar") {expShapeMod = 1.2}
 
       amountMod = 2 / (amount + 1)
-      sizeMod = 1.4 - 0.4 * (size)
+      sizeMod = 1.4 - 0.4 * (size/100)
       spellName += ` ${amount}x ${selfPlaced} ${size}% ${explosionType}`
     } else { 
       //beam
@@ -149,23 +162,28 @@ class MainBox extends Component {
       spellName += ` ${size}%`
     }
 
-    impactPer = baseDamage * damageMod * amountMod * expPlacedMod * expShapeMod
+    impactPer = Math.round(baseDamage * damageMod * amountMod * expPlacedMod * expShapeMod * sizeMod)
+    totalImpact = impactPer * amount
+    dotTick = Math.floor(totalImpact * dotPercent)
+    totalDot = dotTick * dotDuration
+
     spellName += ` ${spellTypeName}`
 
-    return spellName + "\n" + impactPer + "\n" + baseDamage + "\n" + damageMod
+    return [spellName, impactPer, totalImpact, dotTick, totalDot]
   }
 
   calMeleeDmg() {
-
+    return ["spellName", 0, 0, 0, 0]
   }
 
   calBowDmg() {
-
+    return ["spellName", 0, 0, 0, 0]
   }
 
   handleLeftCalClick(obj) {
-    console.log(obj)
-    console.log(this.calMagicDmg(obj, 0))
+    // console.log(obj)
+    this.calculateDamage(obj)
+    console.log(this.state.rightSideDamageArr)
   }
 
   handleLeftIBClick(id, shouldChange) {
@@ -190,6 +208,12 @@ class MainBox extends Component {
     })
   }
 
+  handleRightModeClick() {
+    this.setState({
+      damageCalMode:!this.state.damageCalMode
+    })
+  }
+
   render() {
     let gearStats = this.calculateGearStats()
     return(
@@ -210,9 +234,11 @@ class MainBox extends Component {
         <div id="rightDiv" className="mainDiv">
           <RightSide 
             mainHandler = {this.handleRightIBClick} 
+            mainSwitchHandler = {this.handleRightModeClick}
             selectionMode={this.state.selectionMode} 
             data = {this.props.data} 
             itemType = {this.state.rightItemType}
+            dmgArr = {this.state.rightSideDamageArr}
           />
         </div>
 

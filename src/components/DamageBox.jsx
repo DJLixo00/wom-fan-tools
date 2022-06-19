@@ -22,7 +22,7 @@ class damageBox extends Component {
     <div className="damageBox">
       <div className='dbName'>
         <div>{damage.spellName}</div>
-        <button onClick={()=>this.props.delHandler(this.props.dbId)}>Delete</button>
+        {/* <button onClick={()=>this.props.delHandler(this.props.dbId)}>Delete</button> */}
       </div>
       <div className="dbPowStrRow">
         <div className='statPowP'><img src={iconPow}/>Power: {damage.power}</div>
@@ -36,7 +36,7 @@ class damageBox extends Component {
         <div>Impact Damage Per Hit: <span>{damage.impactPer}</span></div>
         <div>Total Impact Damage: <span>{damage.impact}</span></div>
         <div>Total Damage Over Time: 
-          <span>{damage.dotSum}</span>
+          <span> {damage.dotSum}</span>
           {" "}
           <span>({damage.dotStatus})</span>
         </div>

@@ -149,7 +149,7 @@
   box-shadow: 0px 0px 25px #ffa600;
 }
 
-.damageBox, .rightRow{
+.damageBox{
   height: 25vh;
   box-sizing: border-box;
   border: rgb(78, 78, 78) 2px solid;
@@ -218,7 +218,11 @@
 
 .dbName div {
   text-align: center;
-  width: 80%;
+  width: 100%;
+}
+
+.dbName button {
+  width: 20%;
 }
 
 .dbPowStrRow {
@@ -228,9 +232,6 @@
   background-color: #222222;
 }
 
-.dbName button {
-  width: 20%;
-}
 
 .dbSummary {
   background-color: #302c2c;

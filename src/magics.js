@@ -5,7 +5,6 @@ const OBJ = {
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
-        "dotThreshold":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -16,9 +15,8 @@ const OBJ = {
     "ash":{
         "name":"Ash",
         "damage":0.85,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -28,10 +26,9 @@ const OBJ = {
     "crystal":{
         "name":"Crystal",
         "damage":0.975,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "percentDot": 0,
+        "dotTicks":0,
+        "bleedThreshold":.3,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -40,10 +37,9 @@ const OBJ = {
     "earth":{
         "name":"Earth",
         "damage":1,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "percentDot": 0,
+        "dotTicks":0,
+        "bleedThreshold":.3,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -52,9 +48,8 @@ const OBJ = {
     "explosion":{
         "name":"Explosion",
         "damage":0.925,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -64,9 +59,8 @@ const OBJ = {
     "fire":{
         "name":"Fire",
         "damage":0.825,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0.1,
+        "dotTicks":5,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -77,9 +71,8 @@ const OBJ = {
         "name":"Glass",
         "damage":0.875,
         "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "dotTicks":0,
+        "bleedThreshold":0,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -89,9 +82,8 @@ const OBJ = {
         "name":"Gold",
         "damage":1.2,
         "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "dotTicks":0,
+        "bleedThreshold":0.05,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -101,8 +93,7 @@ const OBJ = {
         "name":"Ink",
         "damage":0.925,
         "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -113,8 +104,7 @@ const OBJ = {
         "name":"Ice",
         "damage":0.925,
         "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -126,7 +116,6 @@ const OBJ = {
         "damage":0.825,
         "percentDot": 0.05,
         "dotTicks":10,
-        "dotThreshold":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -138,7 +127,6 @@ const OBJ = {
         "damage":0.85,
         "percentDot": 0.05,
         "dotTicks":10,
-        "dotThreshold":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -150,7 +138,6 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
-        "dotThreshold":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -162,8 +149,7 @@ const OBJ = {
         "damage":1.1,
         "percentDot": 0.05,
         "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "bleedThreshold":0.05,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -174,8 +160,7 @@ const OBJ = {
         "damage":0.85,
         "percentDot": 0.05,
         "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "bleedThreshold":0.1,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -184,9 +169,8 @@ const OBJ = {
     "plasma":{
         "name":"Plasma",
         "damage":0.775,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0.1,
+        "dotTicks":5,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -197,8 +181,7 @@ const OBJ = {
         "name":"Poison",
         "damage":0.75,
         "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "dotTicks":20,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -208,9 +191,8 @@ const OBJ = {
     "sand":{
         "name":"Sand",
         "damage":0.975,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -220,9 +202,8 @@ const OBJ = {
     "shadow":{
         "name":"Shadow",
         "damage":0.950,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -232,9 +213,8 @@ const OBJ = {
     "snow":{
         "name":"Snow",
         "damage":0.925,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -244,9 +224,8 @@ const OBJ = {
     "water":{
         "name":"Water",
         "damage":0.950,
-        "percentDot": 0.05,
+        "percentDot": 0,
         "dotTicks":10,
-        "dotThreshold":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -256,9 +235,8 @@ const OBJ = {
     "wind":{
         "name":"Wind",
         "damage":0.925,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
+        "percentDot": 0,
+        "dotTicks":0,
         "bleedThreshold":-1,
         "interactions": {
             "statusBonus":[],
@@ -268,10 +246,9 @@ const OBJ = {
     "wood":{
         "name":"Wood",
         "damage":0.950,
-        "percentDot": 0.05,
-        "dotTicks":10,
-        "dotThreshold":0,
-        "bleedThreshold":-1,
+        "percentDot": 0,
+        "dotTicks":0,
+        "bleedThreshold":0.3,
         "interactions": {
             "statusBonus":[],
             "status":[]
@@ -281,231 +258,220 @@ const OBJ = {
     "melee":{
         "oldDagger":{
             "name": "Old Dagger",
-            "baseDamage":26,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":26,
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":47
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":54
                 }
             }
         },
         "cultureDagger":{
             "name": "Culture Dagger",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":22
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":38
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":38
                 }
             }
         },"cultureDualDagger":{
             "name": "Dual Daggers",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":30
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":55
                 },
                 "throw":{
                     "name":"Throw",
-                    "amount":1,
-                    "damageMulPer":1000000000000000
+                    "amount":2,
+                    "damage":48
                 }
             }
         },
         "oldSpear":{
             "name": "Old Spear",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":37
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":67
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":56
                 }
             }
         },
         "cultureSpear":{
             "name": "Culture Spear",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":37
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":67
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":56
                 }
             }
         },
         "oldSword":{
             "name": "Old Sword",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":36
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":67
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":42
                 }
             }
         },
         "cultureSword":{
             "name": "Culture Sword",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":37
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 }
             }
         },
         "oldShortSword":{
             "name": "Old Short Sword",
-            "baseDamage":34,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":1
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 }
             }
         },
         "axe":{
             "name": "Vastira",
-            "baseDamage":43,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 }
             }
         },
         "oath":{
             "name": "Oath Keeper",
-            "baseDamage":35,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 },
                 "ragingStorm":{
                     "name":"Raging Storm",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 }
             }
         },
         "sunken":{
             "name": "Sunken Sword",
-            "baseDamage":40,
             "attacks":{
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damageMulPer":1
+                    "damage":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 },
                 "throw":{
                     "name":"Throw",
                     "amount":1,
-                    "damageMulPer":1000000000000000
+                    "damage":1000000000000000
                 }
             }
         },
@@ -513,34 +479,31 @@ const OBJ = {
     "ranged":{
         "branchBow":{
             "name": "Branch Bow",
-            "baseDamage":35,
             "attacks":{
                 "shoot":{
                     "name":"shoot",
                     "amount":1,
-                    "damageMulPer":100
+                    "damage":100
                 },
             }
         },
         "cultureBow":{
             "name": "Culture Bow",
-            "baseDamage":35,
             "attacks":{
                 "shoot":{
                     "name":"shoot",
                     "amount":1,
-                    "damageMulPer":100
+                    "damage":100
                 }
             }
         },
         "crossBow":{
             "name": "Crossbow",
-            "baseDamage":35,
             "attacks":{
                 "shoot":{
                     "name":"shoot",
                     "amount":1,
-                    "damageMulPer":100
+                    "damage":100
                 }
             }
         }

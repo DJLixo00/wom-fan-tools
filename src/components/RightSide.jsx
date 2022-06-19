@@ -58,6 +58,42 @@ class RightSide extends Component {
         encStats[this.state.enchantmentSelected] += bonus
         return encStats
     }
+    
+    damageBoxAppender() {
+    /** 
+     * takes this.props.dmgArr and puts them in <DamageBox/>
+     * [spellName, impactPer, totalImpact, dotTick, totalImpact, power, strenght, dotType]
+    */
+    let tags = []
+    let dmgArr = this.props.dmgArr
+    // console.log(dmgArr)
+    
+    dmgArr.forEach((v,i) => {
+        let damageBoxObj = {
+            "power":v[5],
+            "strength":v[6],
+            "spellName":v[0],
+            "statusList":["list place holder","status2","status3"],
+            "impactPer":v[1],
+            "impact":v[2],
+            "dotSum":v[4],
+            "dotTick":v[3],
+            "dotStatus":v[7],
+        }
+
+        tags.push(
+            <DamageBox 
+            damageSummary = {damageBoxObj}
+            dbId = {"db" + i}
+            delHandler = {(id)=>console.log(id)}
+        />
+        )
+
+
+    });
+
+    return tags
+    }
 
     unpackData() {
         /*
@@ -116,6 +152,8 @@ class RightSide extends Component {
     }
 
     render() {    
+        this.damageBoxAppender()
+
         let enchantButtonClassArr = [
             "encNotSelected","encNotSelected","encNotSelected","encNotSelected",
             "encNotSelected","encNotSelected","encNotSelected","encNotSelected","encNotSelected"]
@@ -131,7 +169,6 @@ class RightSide extends Component {
             "dotSum":999,
             "dotTick":9,
             "dotStatus":"Bleeding",
-            "bleedDot":-1 //how long does bleed last?
         }
 
         if (this.props.selectionMode) {
@@ -153,14 +190,16 @@ class RightSide extends Component {
         } else {
             return(
                 <div className='rightRowContainer damageBoxContainer'>
+                    <div className='encButtonContainer'>
+                        <button onClick={()=>this.props.mainSwitchHandler()}>
+                            Click to Switch Calculators
+                        </button>
+                    </div>
+                    <div className='selectionRowContainer'>
+                        {this.damageBoxAppender()}
+                    </div>
                     {/* will insert DamageBox here */}
-                    <DamageBox 
-                        damageSummary = {placeHolderDamageBoxOBj}
-                        dbId = "db1"
-                        delHandler = {(id)=>console.log(id)}
-                    />
-                    {/* this should be a button to add DamageBox */}
-                    <div className='rightRow'>{"click here to switch between inventory and calculation"}</div>
+                   
                 </div>
             )
         }
