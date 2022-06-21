@@ -83,6 +83,7 @@ class RightSide extends Component {
 
         tags.push(
             <DamageBox 
+            key = {"db"+i}
             damageSummary = {damageBoxObj}
             dbId = {"db" + i}
             delHandler = {(id)=>console.log(id)}
@@ -159,18 +160,6 @@ class RightSide extends Component {
             "encNotSelected","encNotSelected","encNotSelected","encNotSelected","encNotSelected"]
         enchantButtonClassArr[this.state.enchantmentSelected] = "encSelected";
         
-        let placeHolderDamageBoxOBj = {
-            "power":999,
-            "strength":555,
-            "spellName":"place holder spell name",
-            "statusList":["list place holder","status2","status3"],
-            "impactPer":6,
-            "impact":66666,
-            "dotSum":999,
-            "dotTick":9,
-            "dotStatus":"Bleeding",
-        }
-
         if (this.props.selectionMode) {
             return (
                 <div className='rightRowContainer selectionContainer'>

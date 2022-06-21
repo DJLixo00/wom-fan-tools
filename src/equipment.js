@@ -4,7 +4,7 @@ const OBJ = {"equipment": {
             "name":"sample",
             "rarity":"common",
             "level":[0,40],
-            "stats":[100,100,100,100,100,100,100,100],
+            "stats":[90,90,90,90,90,90,90,90],
             "image":""
         }, 
         "wizardRobe":{

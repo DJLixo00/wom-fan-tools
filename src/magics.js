@@ -262,17 +262,20 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":26,
+                    "damage":26,             
+                    "strMul":1               
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":47
+                    "damage":47,
+                    "strMul":1
                 },
-                "throw":{
+                "skill":{
                     "name":"Throw",
                     "amount":1,
-                    "damage":54
+                    "damage":54,
+                    "strMul":1,
                 }
             }
         },
@@ -282,17 +285,20 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":22
+                    "damage":22,     
+                    "strMul":1                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":38
+                    "damage":38,
+                    "strMul":1
                 },
-                "throw":{
+                "skill":{
                     "name":"Throw",
                     "amount":1,
-                    "damage":38
+                    "damage":38,
+                    "strMul":1
                 }
             }
         },"cultureDualDagger":{
@@ -301,17 +307,20 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":30
+                    "damage":30,             
+                    "strMul":1                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":55
+                    "damage":55,
+                    "strMul":1
                 },
-                "throw":{
+                "skill":{
                     "name":"Throw",
                     "amount":2,
-                    "damage":48
+                    "damage":48,
+                    "strMul":1
                 }
             }
         },
@@ -321,14 +330,15 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":37
+                    "damage":37,           
+                    "strMul":1                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
                     "damage":67
                 },
-                "throw":{
+                "skill":{
                     "name":"Throw",
                     "amount":1,
                     "damage":56
@@ -341,14 +351,15 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":37
+                    "damage":37,            
+                    "strMul":1                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
                     "damage":67
                 },
-                "throw":{
+                "skill":{
                     "name":"Throw",
                     "amount":1,
                     "damage":56
@@ -361,15 +372,16 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":36
+                    "damage":36,              
+                    "strMul":1                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
                     "damage":67
                 },
-                "throw":{
-                    "name":"Throw",
+                "skill":{
+                    "name":"Great Spin",
                     "amount":1,
                     "damage":42
                 }
@@ -381,18 +393,35 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":37
+                    "damage":37,               
+                    "strMul":1                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":67
                 },
-                "throw":{
-                    "name":"Throw",
+                "skill":{
+                    "name":"Great Spin",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":42
                 }
+            }
+        }, "club":{
+            "name": "Club",
+            "attacks":{
+                "light":{
+                    "name":"Slash",
+                    "amount":1,
+                    "damage":36,
+                    "strMul":1
+                },
+                "heavy":{
+                    "name":"Heavy Slash",
+                    "amount":1,
+                    "damage":67,
+                    "strMul":1
+                },
             }
         },
         "oldShortSword":{
@@ -401,18 +430,15 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":1
+                    "damage":34,
+                    "strMul":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":1
+                    "damage":63,
+                    "strMul":1
                 },
-                "throw":{
-                    "name":"Throw",
-                    "amount":1,
-                    "damage":1000000000000000
-                }
             }
         },
         "axe":{
@@ -421,17 +447,20 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":1
+                    "damage":43,
+                    "strMul":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":76,
+                    "strMul":1 
                 },
-                "throw":{
-                    "name":"Throw",
+                "skill":{
+                    "name":"Mighty Clash",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":60,
+                    "strMul":1
                 }
             }
         },
@@ -441,17 +470,20 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":1
+                    "damage":40,
+                    "strMul":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":73,
+                    "strMul":1
                 },
-                "ragingStorm":{
+                "skill":{
                     "name":"Raging Storm",
-                    "amount":1,
-                    "damage":1000000000000000
+                    "amount":7,
+                    "damage":22,
+                    "strMul":0.4,
                 }
             }
         },
@@ -461,17 +493,20 @@ const OBJ = {
                 "light":{
                     "name":"Slash",
                     "amount":1,
-                    "damage":1
+                    "damage":40,
+                    "strMul":1
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":74,
+                    "strMul":1
                 },
-                "throw":{
-                    "name":"Throw",
+                "skill":{
+                    "name":"Rising Tide",
                     "amount":1,
-                    "damage":1000000000000000
+                    "damage":42,
+                    "strMul":1
                 }
             }
         },
@@ -480,31 +515,52 @@ const OBJ = {
         "branchBow":{
             "name": "Branch Bow",
             "attacks":{
-                "shoot":{
-                    "name":"shoot",
+                "arrow":{
+                    "name":"Arrow",
                     "amount":1,
-                    "damage":100
+                    "damage":35,
+                    "strMul":0.6,
+                },
+                "smoke":{
+                    "name":"Smoke",
+                    "amount":1,
+                    "damage":30,
+                    "strMul":0.6,
                 },
             }
         },
         "cultureBow":{
             "name": "Culture Bow",
             "attacks":{
-                "shoot":{
-                    "name":"shoot",
+                "arrow":{
+                    "name":"Arrow",
                     "amount":1,
-                    "damage":100
-                }
+                    "damage":34,
+                    "strMul":0.6,
+                },
+                "smoke":{
+                    "name":"Smoke",
+                    "amount":1,
+                    "damage":29,
+                    "strMul":0.6,
+                },
             }
         },
         "crossBow":{
             "name": "Crossbow",
             "attacks":{
-                "shoot":{
-                    "name":"shoot",
+                "arrow":{
+                    "name":"Arrow",
                     "amount":1,
-                    "damage":100
-                }
+                    "damage":45,
+                    "strMul":1
+                },
+                "smoke":{
+                    "name":"Smoke",
+                    "amount":1,
+                    "damage":40,
+                    "strMul":1
+                },
             }
         }
     },

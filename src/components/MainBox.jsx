@@ -78,9 +78,9 @@ class MainBox extends Component {
     let resultArr = ["",0,0,0,0]
 
     if (spellType === 4) {
-      return this.calMeleeDmg()
+      resultArr = this.calMeleeDmg(obj, strength)
     } else if (spellType === 5) {
-      return this.calBowDmg()
+      resultArr = this.calBowDmg(obj, strength)
     } else {
       resultArr = this.calMagicDmg(obj, power)
       // return this.calMagicDmg(obj, power) this.state.rightSideDamageArr.splice(0, 0, entry)
@@ -164,7 +164,7 @@ class MainBox extends Component {
 
     impactPer = Math.round(baseDamage * damageMod * amountMod * expPlacedMod * expShapeMod * sizeMod)
     totalImpact = impactPer * amount
-    dotTick = Math.floor(totalImpact * dotPercent)
+    dotTick = Math.floor(impactPer * dotPercent)
     totalDot = dotTick * dotDuration
 
     spellName += ` ${spellTypeName}`
@@ -172,18 +172,56 @@ class MainBox extends Component {
     return [spellName, impactPer, totalImpact, dotTick, totalDot]
   }
 
-  calMeleeDmg() {
-    return ["spellName", 0, 0, 0, 0]
+  calMeleeDmg(obj, strength) {
+    let wepMagObj = obj["wepMagObj"]
+    let strongBonus = obj["isStrong"] ? 1.2 : 1
+    let attackObj = wepMagObj["attacks"][obj["attack"]]
+    let amount = attackObj["amount"]
+    let baseDamage = attackObj["damage"]
+    let slope = attackObj["strMul"]
+    //damage
+    let impact = Math.round((slope * strength) + (baseDamage * strongBonus))
+    let totalImpact = impact * amount
+    let bleedTick = Math.floor(impact * 0.05)
+    let totalBleed = bleedTick * 5 //bleed last for 5 ticks
+    let totalDamage = totalImpact + totalBleed
+    //name
+    let weaponName = (obj["isStrong"] ? "Strong " : "") + wepMagObj["name"]
+    let skillName = attackObj["name"]
+    let attackName = weaponName + skillName
+
+    return [attackName, impact, totalImpact, bleedTick, totalBleed]
   }
 
-  calBowDmg() {
-    return ["spellName", 0, 0, 0, 0]
+  calBowDmg(obj, strength) {
+    let wepMagObj = obj["wepMagObj"]
+    let strongBonus = obj["isStrong"] ? 1.2 : 1
+    let arrow = obj["arrow"]
+    let attackObj = wepMagObj["attacks"][arrow]
+    let amount = attackObj["amount"]
+    let baseDamage = attackObj["damage"]
+    let slope = attackObj["strMul"]
+    //damage
+    let impact = Math.floor((slope * strength) + (baseDamage * strongBonus))
+    // let rawIKmpact = (slope * strength) + (baseDamage * strongBonus)
+    // let impact = (obj["isStrong"] ? Math.floor(rawIKmpact) : Math.floor(rawIKmpact))
+    let totalImpact = impact * amount
+    let bleedTick = Math.floor(impact * 0.05)
+    let totalBleed = bleedTick * 5 //bleed last for 5 ticks
+    let totalDamage = totalImpact + totalBleed
+    //name
+    let arrowName = obj["arrow"] === "smoke" ? "Smoke Arrow" : "Arrow"
+    let weaponName = (obj["isStrong"] ? "Strong " : "") + wepMagObj["name"]
+    let attackName = arrowName + " Fired From " + weaponName
+
+    return [attackName, impact, totalImpact, bleedTick, totalBleed]
   }
 
   handleLeftCalClick(obj) {
     // console.log(obj)
     this.calculateDamage(obj)
-    console.log(this.state.rightSideDamageArr)
+    // console.log(this.state.rightSideDamageArr)
+    console.log(obj)
   }
 
   handleLeftIBClick(id, shouldChange) {

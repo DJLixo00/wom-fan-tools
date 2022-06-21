@@ -145,7 +145,7 @@ class LeftSide extends Component {
         obj = this.extractObj(this.state.weapon, "melee")
       }else if (this.state.spellType === 5 )  {
         //ranged
-        obj = this.extractObj(this.state.weapon, "range")
+        obj = this.extractObj(this.state.weapon, "ranged")
       }
 
       let info = {
