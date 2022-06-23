@@ -150,6 +150,7 @@ class LeftSide extends Component {
 
       let info = {
         status:this.state.statusList,
+        statusIndice:this.statusBonusHelper(this.state.statusList),
         spellType: this.state.spellType,
         selfPlaced:selfPlaced,
         expType:expType,
@@ -165,6 +166,16 @@ class LeftSide extends Component {
       }
       
       this.props.mainCalHandler(info)
+    }
+
+    statusBonusHelper(statusSelected) {
+      //returns an arr of indices of status
+      // e.g. bleeding would correspond to 0
+      //      drained would correspond to 15
+      // -1 means something went wrong
+      const STATUS = this.props.magicData.OBJ.status
+      let statusIndices = statusSelected.map(v => this.includesWithIndex(STATUS,v))
+      return statusIndices
     }
 
     includesWithIndex(array, elm) {
@@ -343,7 +354,7 @@ class LeftSide extends Component {
       let statusBoxTags = []
       for (let i=0; i < STATUS.length; i++) {
         statusBoxTags.push(<StatusBox 
-          key = {`status${i}`} 
+          key = {`status${i}`}
           status = {STATUS[i]}
           text={STATUS[i]}
           clicked = {this.handleStatusSel}

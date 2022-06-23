@@ -7,6 +7,13 @@ class damageBox extends Component {
   state = {  } 
 
   listCommaString (arr) {
+    // example: let arr = ["hello","world"," !"]
+    // listCommaString(arr) will return "hello, world,  !"
+
+    if (arr.length === 0) {
+      return "Not Afflicted With Any Status"
+    }
+
     let result = ""
     arr.forEach(v => {
       result += v + ", "

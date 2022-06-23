@@ -5,21 +5,22 @@ const OBJ = {
         "damage":0.875,
         "percentDot": 0.05,
         "dotTicks":10,
+        "dotName":"Corroding",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[15,25,10,25,0,10,0,-5,-10,0,20,40,0,10,-10,0],
             "status":[]
         },
     },
-    //THIS JS IS INCOMPLETE! THE VALUES ARE MOST LIKELY INACCURATE!S
     "ash":{
         "name":"Ash",
         "damage":0.85,
         "percentDot": 0,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[10,20,10,10,10,0,0,0,10,0,-90,0,-10,10,-10,0],
             "status":[]
         },
     },
@@ -27,10 +28,11 @@ const OBJ = {
         "name":"Crystal",
         "damage":0.975,
         "percentDot": 0,
-        "dotTicks":0,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":.3,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[25,0,0,10,10,0,0,0,10,0,30,0,0,0,0,0],
             "status":[]
         },
     },
@@ -38,10 +40,11 @@ const OBJ = {
         "name":"Earth",
         "damage":1,
         "percentDot": 0,
-        "dotTicks":0,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":.3,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[25,0,0,10,10,0,0,0,10,0,40,0,0,0,0,0],
             "status":[]
         },
     },
@@ -50,9 +53,10 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[10,20,10,10,10,0,0,-5,-10,0,50,40,-10,0,-10,0],
             "status":[]
         },
     },
@@ -61,9 +65,10 @@ const OBJ = {
         "damage":0.825,
         "percentDot": 0.1,
         "dotTicks":5,
+        "dotName":"Burning",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[10,0,25,25,25,25,0,-5,-20,0,-10,20,-10,20,-10,0],
             "status":[]
         },
     },
@@ -71,10 +76,11 @@ const OBJ = {
         "name":"Glass",
         "damage":0.875,
         "percentDot": 0.05,
-        "dotTicks":0,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":0,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,0,0,20,20,0,0,10,10,0,-80,0,10,0,0,0],
             "status":[]
         },
     },
@@ -82,10 +88,11 @@ const OBJ = {
         "name":"Gold",
         "damage":1.2,
         "percentDot": 0.05,
-        "dotTicks":0,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":0.05,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,0,0,30,30,0,0,0,10,0,90,0,0,0,0,0],
             "status":[]
         },
     },
@@ -94,9 +101,10 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[15,-20,-30,-5,-5,10,0,0,-10,0,-40,-10,10,-10,-10,0],
             "status":[]
         },
     },
@@ -105,9 +113,10 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[40,-10,-20,0,0,0,0,10,0,0,25,-10,0,-10,25,0],
             "status":[]
         },
     },
@@ -116,9 +125,10 @@ const OBJ = {
         "damage":0.825,
         "percentDot": 0.05,
         "dotTicks":10,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,0,0,0,0,0,0,0,0,0,-30,0,0,0,0,-20],
             "status":[]
         },
     },
@@ -127,9 +137,10 @@ const OBJ = {
         "damage":0.85,
         "percentDot": 0.05,
         "dotTicks":10,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[10,0,10,10,10,0,0,15,25,0,50,-10,0,0,25,0],
             "status":[]
         },
     },
@@ -138,9 +149,10 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0.05,
         "dotTicks":10,
+        "dotName":"Melting",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[20,25,0,0,25,10,0,-2.5,-10,0,-5,40,-5,20,-5,0],
             "status":[]
         },
     },
@@ -148,10 +160,11 @@ const OBJ = {
         "name":"Iron",
         "damage":1.1,
         "percentDot": 0.05,
-        "dotTicks":10,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":0.05,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,0,0,20,20,0,0,0,10,0,80,0,0,0,0,0],
             "status":[]
         },
     },
@@ -159,10 +172,11 @@ const OBJ = {
         "name":"Paper",
         "damage":0.85,
         "percentDot": 0.05,
-        "dotTicks":10,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":0.1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,-30,-40,10,10,0,0,10,0,0,-90,0,0,0,-10,0],
             "status":[]
         },
     },
@@ -171,9 +185,10 @@ const OBJ = {
         "damage":0.775,
         "percentDot": 0.1,
         "dotTicks":5,
+        "dotName":"Scorched",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[20,0,0,20,20,10,0,0,0,0,0,20,-5,20,-5,0],
             "status":[]
         },
     },
@@ -182,9 +197,10 @@ const OBJ = {
         "damage":0.75,
         "percentDot": 0.05,
         "dotTicks":20,
+        "dotName":"Poisoned",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[25,-10,0,0,0,0,0,10,0,0,-90,0,0,0,0,0],
             "status":[]
         },
     },
@@ -193,9 +209,10 @@ const OBJ = {
         "damage":0.975,
         "percentDot": 0,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[10,10,0,10,10,0,0,-10,0,0,-60,20,0,20,-20,0],
             "status":[]
         },
     },
@@ -204,9 +221,10 @@ const OBJ = {
         "damage":0.950,
         "percentDot": 0,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,0,0,0,0,0,-30,0,0,0,-30,0,0,0,0,0],
             "status":[]
         },
     },
@@ -215,9 +233,10 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,-10,-20,-10,-10,0,0,0,0,0,-60,-20,25,-20,10],
             "status":[]
         },
     },
@@ -226,9 +245,10 @@ const OBJ = {
         "damage":0.950,
         "percentDot": 0,
         "dotTicks":10,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[10,-20,-30,-10,-10,0,0,-10,-20,20,-50,-10,30,-10,0,0],
             "status":[]
         },
     },
@@ -237,9 +257,10 @@ const OBJ = {
         "damage":0.925,
         "percentDot": 0,
         "dotTicks":0,
+        "dotName":"N/A",
         "bleedThreshold":-1,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[0,-10,10,0,0,-10,0,-5,-10,10,-50,40,20,10,-10,0],
             "status":[]
         },
     },
@@ -247,10 +268,11 @@ const OBJ = {
         "name":"Wood",
         "damage":0.950,
         "percentDot": 0,
-        "dotTicks":0,
+        "dotTicks":5,
+        "dotName":"Bleeding",
         "bleedThreshold":0.3,
         "interactions": {
-            "statusBonus":[],
+            "statusBonus":[30,30,30,15,15,0,0,0,20,0,0,20,0,10,0,0],
             "status":[]
         },
     },
@@ -336,12 +358,14 @@ const OBJ = {
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":67
+                    "damage":67,
+                    "strMul":1
                 },
                 "skill":{
                     "name":"Throw",
                     "amount":1,
-                    "damage":56
+                    "damage":56,
+                    "strMul":1
                 }
             }
         },
@@ -357,12 +381,14 @@ const OBJ = {
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":67
+                    "damage":67,
+                    "strMul":1
                 },
                 "skill":{
                     "name":"Throw",
                     "amount":1,
-                    "damage":56
+                    "damage":56,
+                    "strMul":1
                 }
             }
         },
@@ -378,12 +404,14 @@ const OBJ = {
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":67
+                    "damage":67,
+                    "strMul":1
                 },
                 "skill":{
                     "name":"Great Spin",
                     "amount":1,
-                    "damage":42
+                    "damage":42,
+                    "strMul":1
                 }
             }
         },
@@ -399,12 +427,14 @@ const OBJ = {
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
-                    "damage":67
+                    "damage":67,
+                    "strMul":1
                 },
                 "skill":{
                     "name":"Great Spin",
                     "amount":1,
-                    "damage":42
+                    "damage":42,
+                    "strMul":1
                 }
             }
         }, "club":{
@@ -572,4 +602,4 @@ const OBJ = {
     ]
 }
 
-export default{OBJ}
+export default {OBJ}

@@ -42,6 +42,41 @@ class MainBox extends Component {
     return result
   }
 
+  statusBonusHelper(statusBonusList,afflictedList){
+  //apply highest status bonus, apply 50% of the remaining bonus
+    let statusMul = []
+    afflictedList.forEach(v => {
+      statusMul.push(statusBonusList[v])
+    });
+    statusMul = statusMul.map(v => v/100 + 1)
+    let maxMul = Math.max(...statusMul)
+    statusMul.splice(this.includesWithIndex(statusMul,maxMul),1)
+    statusMul = statusMul.map(v => (v-1)/2 + 1) //50% after the highest? Including the debuffs?
+    statusMul.push(maxMul)
+    console.log(statusMul)
+
+    let result = 1
+    statusMul.forEach(v => {
+      result *= v
+    })
+
+    return result
+  }
+
+  includesWithIndex(array, elm) {
+    /*
+    * returns the index where the first elm is found in array
+    * returns -1 otherwise
+    */
+
+    for (let i = 0; i < array.length; i++) {
+      if (elm === array[i]) {
+        return i
+      }
+    }
+    return -1
+  }
+
   calculateGearStats(){
     /**
      * returns array of the stats of the item equipped.
@@ -64,18 +99,18 @@ class MainBox extends Component {
   calculateDamage(obj){
     /**
      * Takes in the obj from headleLeftCalClick to calcualte damage.
-      [spellName, impactPer, totalImpact, dotTick, totalImpact, power, strenght, dotType]
+      [spellName, impactPer, totalImpact, dotTick, totalImpact, dotType, power, strenght, statusStr]
       returns nothing
      */
 
     //get the newest the gear stats
     let gearStats = this.calculateGearStats()
 
-    let dotType = "N/A"
     let spellType = obj["spellType"]
     let strength = gearStats[3]
     let power = gearStats[0]
     let resultArr = ["",0,0,0,0]
+    let statusStr = obj['status']//this.arrayToStringHelper(obj['status'])
 
     if (spellType === 4) {
       resultArr = this.calMeleeDmg(obj, strength)
@@ -87,7 +122,7 @@ class MainBox extends Component {
     }
     resultArr.push(power)
     resultArr.push(strength)
-    resultArr.push(dotType)
+    resultArr.push(statusStr)
     this.state.rightSideDamageArr.splice(0, 0, resultArr)
     this.setState({
       rightSideDamageArr: this.state.rightSideDamageArr
@@ -108,8 +143,15 @@ class MainBox extends Component {
     let magic = wepMagObj["damage"]
     let chargePercent = parseInt(obj["charge"])
     let size = obj["size"]
-    let interactions = 1
     let amount = parseInt(obj["amount"])
+
+    let interactions = 1
+
+    let bonusIndices = obj["statusIndice"]
+    if (bonusIndices.length > 0) {
+      let bonusList = wepMagObj["interactions"]["statusBonus"]
+      interactions = this.statusBonusHelper(bonusList, bonusIndices)
+    }
 
     let spellType = obj["spellType"]
     let spellTypeName = ["","Blast","Explosion","Beam"][obj["spellType"]]
@@ -138,6 +180,7 @@ class MainBox extends Component {
     let impactPer = 0
     let totalImpact = 0
 
+    let dotType = wepMagObj["dotName"]
     let dotPercent = wepMagObj["percentDot"]
     let dotDuration = wepMagObj["dotTicks"]
     let dotTick = 0
@@ -169,7 +212,7 @@ class MainBox extends Component {
 
     spellName += ` ${spellTypeName}`
 
-    return [spellName, impactPer, totalImpact, dotTick, totalDot]
+    return [spellName, impactPer, totalImpact, dotTick, totalDot, dotType]
   }
 
   calMeleeDmg(obj, strength) {
@@ -184,13 +227,13 @@ class MainBox extends Component {
     let totalImpact = impact * amount
     let bleedTick = Math.floor(impact * 0.05)
     let totalBleed = bleedTick * 5 //bleed last for 5 ticks
-    let totalDamage = totalImpact + totalBleed
+    let dotType = "Bleed"
     //name
     let weaponName = (obj["isStrong"] ? "Strong " : "") + wepMagObj["name"]
     let skillName = attackObj["name"]
     let attackName = weaponName + skillName
 
-    return [attackName, impact, totalImpact, bleedTick, totalBleed]
+    return [attackName, impact, totalImpact, bleedTick, totalBleed, dotType]
   }
 
   calBowDmg(obj, strength) {
@@ -208,13 +251,13 @@ class MainBox extends Component {
     let totalImpact = impact * amount
     let bleedTick = Math.floor(impact * 0.05)
     let totalBleed = bleedTick * 5 //bleed last for 5 ticks
-    let totalDamage = totalImpact + totalBleed
+    let dotType = "Bleed"
     //name
     let arrowName = obj["arrow"] === "smoke" ? "Smoke Arrow" : "Arrow"
     let weaponName = (obj["isStrong"] ? "Strong " : "") + wepMagObj["name"]
     let attackName = arrowName + " Fired From " + weaponName
 
-    return [attackName, impact, totalImpact, bleedTick, totalBleed]
+    return [attackName, impact, totalImpact, bleedTick, totalBleed,dotType]
   }
 
   handleLeftCalClick(obj) {
@@ -252,7 +295,7 @@ class MainBox extends Component {
     })
   }
 
-  render() {
+  render() {    
     let gearStats = this.calculateGearStats()
     return(
       <div className="mainBox">

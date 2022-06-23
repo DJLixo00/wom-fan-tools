@@ -5,28 +5,28 @@ class InventoryBox extends Component {
     item: "empty",
   } 
 
-  constructor(prop){
-    super(prop);
-    // this.handleEquip = this.handleEquip.bind(this)
+  // constructor(prop){
+  //   super(prop);
+  //   // this.handleEquip = this.handleEquip.bind(this)
     
-  }
+  // }
 
   render() {
     
     switch (this.props.type) {
       case "equip":
-        let invBoxColor = this.props.boxSelected == this.props.boxId ? 'inventoryBoxClicked' : 'inventoryBox';
+        let invBoxColor = this.props.boxSelected === this.props.boxId ? 'inventoryBoxClicked' : 'inventoryBox';
 
         return (
           <div className={invBoxColor} onClick={()=>this.props.clicked(this.props.boxId)}>
-            {this.props.text == null ? "InventoryBox":this.props.text}
+            {this.props.text == null ? "Click to Equip":this.props.text}
           </div>
         );
 
       case "invisible":
         return (
           <div className="fakeInvBox">
-            {this.props.text == null ? "":this.props.text}
+            {this.props.text === null ? "":this.props.text}
           </div>
         );
       

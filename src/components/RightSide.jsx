@@ -70,15 +70,15 @@ class RightSide extends Component {
     
     dmgArr.forEach((v,i) => {
         let damageBoxObj = {
-            "power":v[5],
-            "strength":v[6],
+            "power":v[6],
+            "strength":v[7],
             "spellName":v[0],
-            "statusList":["list place holder","status2","status3"],
+            "statusList":v[8],
             "impactPer":v[1],
             "impact":v[2],
             "dotSum":v[4],
             "dotTick":v[3],
-            "dotStatus":v[7],
+            "dotStatus":v[5],
         }
 
         tags.push(
