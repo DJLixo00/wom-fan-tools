@@ -1,5 +1,7 @@
 # WoM Damage Calculator
 
+Page link: https://djlixo00.github.io/wom-fan-tools/
+
 ## About
 
 This is a fan-made tool for the Roblox game World of Magic (WoM). This tool includes a gear stats calculator and a spell/weapon damage calculator. 
