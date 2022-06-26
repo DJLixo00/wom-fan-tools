@@ -19,7 +19,7 @@ class InventoryBox extends Component {
 
         return (
           <div className={invBoxColor} onClick={()=>this.props.clicked(this.props.boxId)}>
-            {this.props.text == null ? "Click to Equip":this.props.text}
+            {this.props.text == null ? "Click to Toggle":this.props.text}
           </div>
         );
 

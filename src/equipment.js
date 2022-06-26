@@ -230,8 +230,8 @@ const OBJ = {"equipment": {
             "stats":[0,54,0,0,0,0,0,0],
             "image":""
         },
-        "priateCaptainsHat":{
-            "name":"Priate Captain's Hat",
+        "pirateCaptainsHat":{
+            "name":"Pirate Captain's Hat",
             "rarity":"common",
             "level":[50,90],
             "stats":[0,54,0,0,0,0,0,0],

@@ -300,7 +300,7 @@ class MainBox extends Component {
     return(
       <div className="mainBox">
         <div id="topDiv" className="mainDiv">
-          top
+          WoM Damage Calculator*
         </div>
 
         <LeftSide 
@@ -324,7 +324,16 @@ class MainBox extends Component {
         </div>
 
         <div id="bottomDiv" className="mainDiv">
-          bottom
+          <div className='botttomTopDiv'>
+            {/* <a href='https://github.com/DJLixo00/wom-fan-tools'>About</a>
+            <a>* Limitations</a>
+            <a>References/acknowledgement</a>
+            <a>Contact Me</a> */}
+            <a href='https://github.com/DJLixo00/wom-fan-tools/blob/main/README.md' target="_blank">
+              Please see README for references/acknowledgment, contact information, and limations of this tool.
+            </a>
+          </div>
+          <div className='botttomBotDiv'></div>
         </div>
       </div>
     )

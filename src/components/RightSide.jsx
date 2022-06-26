@@ -181,7 +181,7 @@ class RightSide extends Component {
                 <div className='rightRowContainer damageBoxContainer'>
                     <div className='encButtonContainer'>
                         <button onClick={()=>this.props.mainSwitchHandler()}>
-                            Click to Switch Calculators
+                            Click to Switch Calculator
                         </button>
                     </div>
                     <div className='selectionRowContainer'>
