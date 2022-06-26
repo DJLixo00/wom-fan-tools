@@ -1,77 +1,48 @@
-# Getting Started with Create React App
+# WoM Damage Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+This is a fan-made tool for the Roblox game World of Magic (WoM). This tool includes a gear stats calculator and a spell/weapon damage calculator. 
 
-In the project directory, you can run:
+## Limitations
 
-### `npm start`
+### Gear stats calculator limitations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Does not support gear levels. All gears are assumed to be fully upgraded.
+- WoM has gear equip restrictions (e.g. cannot equip 2 of the same item), however this feature is not accounted for in this calculator.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Damage calculator limitations
 
-### `npm test`
+- Does not support levels. 
+- - Assumes the player is at level 90.
+- - Assumes the weapons are fully upgraded.
+- Total DoT damage are not be accurate for multiblast spells.
+- Weapon damage may not be accurate.
+ - - The formula for weapon damage is derived from in-game experiments, however the calculations for "strong" enchanted weapons may still be inaccurate.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Others
 
-### `npm run build`
+- This site may not function properly on some browers due to certain CSS properties not being supported.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## References / Acknowledgement
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The data on magics and damage calculations is taken from the fandom wiki.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Spell damage calculation:
+- https://roblox-world-of-magic-wiki.fandom.com/wiki/Damage_Calculation
 
-### `npm run eject`
+Magic status interactions:
+- https://roblox-world-of-magic-wiki.fandom.com/wiki/Status_Effects
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Magic properties:
+- https://roblox-world-of-magic-wiki.fandom.com/wiki/Magics
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Background images and icons are screenshots taken in-game and modified.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Gear data were collected from in-game.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contact Info
 
-## Learn More
+Discord: BaseCase #4511
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-___
-## Todo:
-- [ ] js
-- [ ] make UI look better
-- [ ] make back ground not loop
-- [ ] add about and acknowledgement page
+Acrane Odyssey Forum: Thats_myBaseCase
