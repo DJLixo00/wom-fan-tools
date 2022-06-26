@@ -4,6 +4,22 @@
 
 This is a fan-made tool for the Roblox game World of Magic (WoM). This tool includes a gear stats calculator and a spell/weapon damage calculator. 
 
+## How to Use
+
+### Gear stats calculator
+
+- To select gears to equip/remove, click on one of the boxes on the left labeled `Click to Toggle`. Click on the box again to cancel.
+- To select enchantments, click on the corresponding icon above the gear selection. Click on the highlighted icon again to select clean (unenchanted) gear.
+- The numbers in brackets below equipment are their stats.
+    - For example: `[0,108,0,0,0,0,0,0]` means 0 `power`, 108 `defense`, 0 `agility`, 0 `strength`, 0 `casting speed`, 0 `magic speed`, 0 `magic size`, and 0 `knockback`.
+
+### Damage calculator 
+
+- To select spells and weapons use the drop down list.
+- To select/deselect status click on the corresponding button.
+- Click on `Calculate` to get the results. 
+    - Note: the `Calculate` button will not be clickable until you select a spell/weapon type
+
 ## Limitations
 
 ### Gear stats calculator limitations
@@ -14,15 +30,16 @@ This is a fan-made tool for the Roblox game World of Magic (WoM). This tool incl
 ### Damage calculator limitations
 
 - Does not support levels. 
-- - Assumes the player is at level 90.
-- - Assumes the weapons are fully upgraded.
+    - Assumes the player is at level 90.
+    - Assumes the weapons are fully upgraded.
 - Total DoT damage are not be accurate for multiblast spells.
 - Weapon damage may not be accurate.
- - - The formula for weapon damage is derived from in-game experiments, however the calculations for "strong" enchanted weapons may still be inaccurate.
+    - The formula for weapon damage is derived from in-game experiments, however the calculations for "strong" enchanted weapons may still be inaccurate.
 
 ### Others
 
 - This site may not function properly on some browers due to certain CSS properties not being supported.
+- Does not support mobile devices.
 
 ## References / Acknowledgement
 
