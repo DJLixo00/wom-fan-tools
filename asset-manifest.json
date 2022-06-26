@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/wom-fan-tools/static/css/main.6989228a.css",
+    "main.js": "/wom-fan-tools/static/js/main.ffcd24a7.js",
+    "static/js/787.f95046f3.chunk.js": "/wom-fan-tools/static/js/787.f95046f3.chunk.js",
+    "static/media/background1.jpg": "/wom-fan-tools/static/media/background1.a600afcba379653218bc.jpg",
+    "static/media/womInvBackground.png": "/wom-fan-tools/static/media/womInvBackground.7912bd6d99bf9754e985.png",
+    "static/media/iconMsp.png": "/wom-fan-tools/static/media/iconMsp.646f427198981f39be1b.png",
+    "static/media/iconCas.png": "/wom-fan-tools/static/media/iconCas.232135b4076198a5c7f9.png",
+    "static/media/iconAgi.png": "/wom-fan-tools/static/media/iconAgi.ded5cb942589d9890f1e.png",
+    "static/media/iconSze.png": "/wom-fan-tools/static/media/iconSze.18cace63b2abf732e373.png",
+    "static/media/iconKnb.png": "/wom-fan-tools/static/media/iconKnb.a67526c5afd7bfe3e113.png",
+    "static/media/iconStr.png": "/wom-fan-tools/static/media/iconStr.6fb2edf6191d252a87a6.png",
+    "static/media/iconPow.png": "/wom-fan-tools/static/media/iconPow.a4a914f0591d8566242e.png",
+    "static/media/iconDef.png": "/wom-fan-tools/static/media/iconDef.e488e28a76f986931b80.png",
+    "index.html": "/wom-fan-tools/index.html",
+    "main.6989228a.css.map": "/wom-fan-tools/static/css/main.6989228a.css.map",
+    "main.ffcd24a7.js.map": "/wom-fan-tools/static/js/main.ffcd24a7.js.map",
+    "787.f95046f3.chunk.js.map": "/wom-fan-tools/static/js/787.f95046f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6989228a.css",
+    "static/js/main.ffcd24a7.js"
+  ]
+}
