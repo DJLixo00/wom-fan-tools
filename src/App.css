@@ -46,7 +46,7 @@
 }
 
 .botttomTopDiv a{
-  font-size: 20px;
+  font-size: 2.5vh;
   color: #000000;
   text-shadow: whitesmoke 0px 0px 2px;
   text-decoration: none;
@@ -125,6 +125,7 @@
 .statDisplay{
   box-sizing: border-box;
   border: #ffa600 1px solid;
+  font-size: 2vh;
   background-color: #222222;
   display: flex;
   flex-wrap: wrap;
@@ -145,7 +146,14 @@
 
 .statP {
   width: 50%;
-  font-size: 16px;
+  font-size: 2vh;
+}
+
+.statP img {
+  display: inline;
+  height: 3vh;
+  width: 3vh;
+
 }
 
 /* Components */
@@ -208,6 +216,7 @@
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
   color:rgb(255, 255, 255);
   font-weight: bold;
+  font-size: 1.8vh;
 
   background-color: #222222;
 }
@@ -231,6 +240,7 @@
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.8);
   color:rgb(255, 255, 255);
   font-weight: bold;
+  font-size: 1.8vh;
 }
 
 .selectContainer select{

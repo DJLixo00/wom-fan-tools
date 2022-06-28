@@ -32,8 +32,8 @@ class damageBox extends Component {
         {/* <button onClick={()=>this.props.delHandler(this.props.dbId)}>Delete</button> */}
       </div>
       <div className="dbPowStrRow">
-        <div className='statPowP'><img src={iconPow}/>Power: {damage.power}</div>
-        <div className='statStrP'><img src={iconStr}/>Strength: {damage.strength}</div>
+        <div className='statPowP statP'><img src={iconPow}/>Power: {damage.power}</div>
+        <div className='statStrP statP'><img src={iconStr}/>Strength: {damage.strength}</div>
       </div>
       <div className='dbStatus'> 
         Target is: {this.listCommaString(damage.statusList)}

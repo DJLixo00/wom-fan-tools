@@ -53,7 +53,7 @@ class MainBox extends Component {
     statusMul.splice(this.includesWithIndex(statusMul,maxMul),1)
     statusMul = statusMul.map(v => (v-1)/2 + 1) //50% after the highest? Including the debuffs?
     statusMul.push(maxMul)
-    console.log(statusMul)
+    // console.log(statusMul)
 
     let result = 1
     statusMul.forEach(v => {
@@ -229,7 +229,7 @@ class MainBox extends Component {
     let totalBleed = bleedTick * 5 //bleed last for 5 ticks
     let dotType = "Bleed"
     //name
-    let weaponName = (obj["isStrong"] ? "Strong " : "") + wepMagObj["name"]
+    let weaponName = (obj["isStrong"] ? "Strong " : "") + wepMagObj["name"] + " "
     let skillName = attackObj["name"]
     let attackName = weaponName + skillName
 
@@ -264,7 +264,7 @@ class MainBox extends Component {
     // console.log(obj)
     this.calculateDamage(obj)
     // console.log(this.state.rightSideDamageArr)
-    console.log(obj)
+    //console.log(obj)
   }
 
   handleLeftIBClick(id, shouldChange) {

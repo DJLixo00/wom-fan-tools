@@ -65,3 +65,18 @@ Gear data were collected from in-game.
 Discord: BaseCase #4511
 
 Acrane Odyssey Forum: Thats_myBaseCase
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Updates
+
+## 6/28/2022
+- Slightly modified CSS to make the layout look more functional for people with a wider screen.
+    - Some elements' font-size is changed from px to vh.
+    - Icon images now scales with the window size.
+    - This probably doesn't fix the issues on mobile devices.
+- Added a space between melee weapon name and weapon skill name.
