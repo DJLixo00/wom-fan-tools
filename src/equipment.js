@@ -95,7 +95,7 @@ const OBJ = {"equipment": {
             "name":"Sunken Iron Armor",
             "rarity":"rare",
             "level":[50,90],
-            "stats":[0,62,0,0,0,0,13,0],
+            "stats":[0,125,0,0,0,0,27,0],
             "image":""
         },
     },

@@ -222,8 +222,16 @@ class MainBox extends Component {
     let amount = attackObj["amount"]
     let baseDamage = attackObj["damage"]
     let slope = attackObj["strMul"]
+    let rounding = Math.round
+
+    if (attackObj["rounding"] === "floor") {
+      rounding = Math.floor
+    } else if (attackObj["rounding"] === "ceiling"){
+      rounding = Math.ceil
+    }
+
     //damage
-    let impact = Math.round((slope * strength) + (baseDamage * strongBonus))
+    let impact = rounding((slope * strength) + (baseDamage * strongBonus))
     let totalImpact = impact * amount
     let bleedTick = Math.floor(impact * 0.05)
     let totalBleed = bleedTick * 5 //bleed last for 5 ticks
@@ -261,7 +269,7 @@ class MainBox extends Component {
   }
 
   handleLeftCalClick(obj) {
-    // console.log(obj)
+    console.log(obj)
     this.calculateDamage(obj)
     // console.log(this.state.rightSideDamageArr)
     //console.log(obj)

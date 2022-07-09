@@ -74,6 +74,10 @@ Acrane Odyssey Forum: Thats_myBaseCase
 
 # Updates
 
+## 7/8/2022
+- Adjusted the `strMul` property of daggers for to better model the results obtained from gameplay.
+- Adjusted sunken armor stats to reflect the stats found in the game.
+
 ## 6/28/2022
 - Slightly modified CSS to make the layout look more functional for people with a wider screen.
     - Some elements' font-size is changed from px to vh.

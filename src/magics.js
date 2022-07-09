@@ -285,19 +285,21 @@ const OBJ = {
                     "name":"Slash",
                     "amount":1,
                     "damage":26,             
-                    "strMul":1               
+                    "strMul":0.6,
+                    "rounding":"floor"               
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
                     "damage":47,
-                    "strMul":1
+                    "strMul":0.6,
                 },
                 "skill":{
                     "name":"Throw",
                     "amount":1,
                     "damage":54,
-                    "strMul":1,
+                    "strMul":0.6,
+                    "rounding":"ceiling" 
                 }
             }
         },
@@ -308,19 +310,22 @@ const OBJ = {
                     "name":"Slash",
                     "amount":1,
                     "damage":22,     
-                    "strMul":1                
+                    "strMul":0.6,
+                    "rounding":"floor"                 
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
                     "damage":38,
-                    "strMul":1
+                    "strMul":0.6,
+                    "rounding":"ceiling" 
                 },
                 "skill":{
                     "name":"Throw",
                     "amount":1,
                     "damage":38,
-                    "strMul":1
+                    "strMul":0.6,
+                    "rounding":"ceiling" 
                 }
             }
         },"cultureDualDagger":{
@@ -330,19 +335,19 @@ const OBJ = {
                     "name":"Slash",
                     "amount":1,
                     "damage":30,             
-                    "strMul":1                
+                    "strMul":0.6                
                 },
                 "heavy":{
                     "name":"Heavy Slash",
                     "amount":1,
                     "damage":55,
-                    "strMul":1
+                    "strMul":0.6
                 },
                 "skill":{
                     "name":"Throw",
                     "amount":2,
                     "damage":48,
-                    "strMul":1
+                    "strMul":0.6
                 }
             }
         },
